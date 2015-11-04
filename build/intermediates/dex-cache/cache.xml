@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/hector castillo/Desktop/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/ProjectNetworking/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-b7d4c6cb5cc79f3835e718e23036b89afc51c7ee.jar" />
+    </item>
+
+</items>
