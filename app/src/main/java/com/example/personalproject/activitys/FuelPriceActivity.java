@@ -62,6 +62,7 @@ public class FuelPriceActivity extends Activity {
         listView = (ListView) findViewById(R.id.list_combustible);
 
         mTitle = (TextView) findViewById(R.id.txtv_title);
+
     }
 
     private void setListViewCustomAdapter() {
@@ -80,6 +81,7 @@ public class FuelPriceActivity extends Activity {
 
     }
 
+    //TODO: check this
     // This function used by adapter
     public void onItemClick(int mPosition) {
         Combustible tempValues = (Combustible) CustomListViewValuesArr
@@ -101,7 +103,7 @@ public class FuelPriceActivity extends Activity {
     private void setXmlInMemeoryCache(String data) {
         MemoryCache cache = MemoryCache.getInstance();
 
-        cache.putValueInCache(ActivityConstants.EXTRA_XML_CACHE, data);
+        cache.putValueInCache(ActivityConstants.EXTRA_XML_MIC_CACHE, data);
     }
 
     /**
@@ -122,13 +124,14 @@ public class FuelPriceActivity extends Activity {
         protected String doInBackground(Void... parms) {
             Client client = new Client();
 
-            if (cache
-                    .checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_CACHE)) {
-                return cache
-                        .getValueFromCache(ActivityConstants.EXTRA_XML_CACHE);
-            } else {
-                return client.getRSS(getResources().getString(R.string.url));
-            }
+            //TODO: cache the data reciver.
+//            if (cache
+//                    .checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
+//                return cache
+//                        .getValueFromCache(ActivityConstants.EXTRA_XML_MIC_CACHE);
+//            } else {
+            return client.getRSS(getResources().getString(R.string.url));
+            //}
         }
 
         @Override
@@ -141,7 +144,7 @@ public class FuelPriceActivity extends Activity {
                 // TODO:Not cache for know
                 // setXmlInMemeoryCache(result);
 
-                mData = parser.readEntry(result);
+                mData = parser.readEntry(result); // parser.readEntry(result);
 
 
                 setListViewCustomAdapter();

@@ -13,106 +13,116 @@ import java.net.URL;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.provider.Settings;
 import android.util.Log;
 
+//TODO:Implement okHttp , or retrofit.
 public class Client {
-	/* Time in milliseconds */
-	private static final int TIMEOUT_READ = 30000;
-	private static final int TIMEOUT_CONNECT = 50000;
+    /* Time in milliseconds */
+    private static final int TIMEOUT_READ = 10000;
+    private static final int TIMEOUT_CONNECT = 15000;
+    private static final String DEBUG_TAG = "DEBUG_TAG";
 
-	public String getRSS(String myUrl) {
-		InputStream inputStream = null;
-		String result = "";
-		int len = 1024 * 40;
+    /***
+     * Make a Http GET request to url provider.
+     *
+     * @param myUrl String with the rss url.
+     * @return String in XML format with the data.
+     */
 
-		try {
+    public String getRSS(String myUrl) {
+        InputStream inputStream = null;
+        String result = "";
 
-			URL url = new URL(myUrl);
+        int len = 1024 * 40;
 
-			HttpURLConnection connection = (HttpURLConnection) url
-					.openConnection();
-			connection.setReadTimeout(TIMEOUT_READ);
-			connection.setConnectTimeout(TIMEOUT_CONNECT);
-			connection.setRequestMethod("GET");
-			connection.setDoOutput(true);
+        try {
+            URL url = new URL(myUrl);
 
-			// start the query
-			connection.connect();
+            HttpURLConnection connection = (HttpURLConnection) url
+                    .openConnection();
+            connection.setReadTimeout(TIMEOUT_READ);
+            connection.setConnectTimeout(TIMEOUT_CONNECT);
+            connection.setRequestMethod("GET");
+            connection.setDoOutput(true);
 
-			int response = connection.getResponseCode();
+            // Initializer the connection.
+            connection.connect();
 
-			if (response == HttpURLConnection.HTTP_OK) {
-				// convert the inputString to string
-				inputStream = connection.getInputStream();
-				result = readIt(inputStream, len);
-				//result = convertInputStreamToString(inputStream);
+            int response = connection.getResponseCode();
+            Log.d(DEBUG_TAG, "The response is " + response);
 
-			} else {
-				inputStream = connection.getErrorStream();
+            if (response == HttpURLConnection.HTTP_OK) {
+                // Convert the inputString to string
+                inputStream = connection.getInputStream();
+                result = convertInputStreamToString(inputStream);
 
-				Log.d("DEBUG_TAG", "The response is: " + response);
-				result = "The response is: " + response + " "
-						+ readIt(inputStream, len);
+            } else {
+                inputStream = connection.getErrorStream();
+                Log.d(DEBUG_TAG, "The error response is: " +
+                        convertInputStreamToString(inputStream));
+            }
 
-			}
+            connection.disconnect();
 
-			connection.disconnect();
+            if (inputStream != null) {
+                inputStream.close();
+            }
 
-			if (inputStream != null)
-				inputStream.close();
 
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-		Log.i("XML MIC: ", result.trim());
+        Log.i(DEBUG_TAG, "XML_String: " + result.trim());
 
-		return result.trim();
-	}
+        return result.trim();
+    }
 
-	private static String readIt(InputStream stream, int len)
-			throws IOException, UnsupportedEncodingException {
+    /***
+     * Convert InputStream to String in format the xml encode &gt, &lt
+     *
+     * @param inputStream
+     * @return
+     * @throws IOException
+     */
 
-		Reader reader = null;
-		reader = new InputStreamReader(stream, "UTF-8");
-		char[] buffer = new char[len];
-		reader.read(buffer);
+    private static String convertInputStreamToString(InputStream inputStream)
+            throws IOException {
+        StringBuilder stringBuilder = new StringBuilder();
 
-		return new String(buffer); // .replaceAll("&lt;",
-									// "<").replaceAll("&gt;",
-									// ">").replaceAll("\\s+", "");
-	}
+        BufferedReader bufferedReader = new BufferedReader(
+                new InputStreamReader(inputStream));
 
-	private static String convertInputStreamToString(InputStream inputStream)
-			throws IOException {
-		StringBuilder stringBuilder = new StringBuilder();
+        String line = "";
 
-		BufferedReader bufferedReader = new BufferedReader(
-				new InputStreamReader(inputStream));
+        while ((line = bufferedReader.readLine()) != null) {
+            stringBuilder.append(line);
+        }
 
-		String line = "";
+        inputStream.close();
 
-		while ((line = bufferedReader.readLine()) != null) {
-			stringBuilder.append(line);
-		}
+        return stringBuilder.toString();
+    }
 
-		inputStream.close();
+    /**
+     * Check is the user have a active internet connectivity.
+     *
+     * @param context
+     * @return true is have internet connection.
+     */
 
-		return stringBuilder.toString();
-	}
+    public boolean isConnected(Context context) {
+        ConnectivityManager connManager = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
 
-	// Check is the user have connectivity
-	public boolean isConnected(Context context) {
-		ConnectivityManager connManager = (ConnectivityManager) context
-				.getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
-
-		if (networkInfo != null && networkInfo.isConnected())
-			return true;
-		else
-			return false;
-	}
+        if (networkInfo != null && networkInfo.isConnected())
+            return true;
+        else
+            return false;
+    }
 }

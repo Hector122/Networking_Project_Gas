@@ -54,39 +54,41 @@ public final class R {
         public static final int word_map=0x7f02000e;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001a;
+        public static final int action_settings=0x7f09001b;
         public static final int btn_calculate=0x7f090004;
         public static final int btn_connect=0x7f090001;
         public static final int btn_maps=0x7f090005;
-        public static final int curren_price=0x7f090011;
-        public static final int description_title=0x7f09000e;
-        public static final int diference_price=0x7f090010;
-        public static final int diference_text=0x7f09000f;
-        public static final int firs_row=0x7f090012;
-        public static final int header_container=0x7f090009;
-        public static final int imageView1=0x7f090013;
-        public static final int imageView2=0x7f090014;
-        public static final int imageView3=0x7f090015;
-        public static final int imageView4=0x7f090017;
-        public static final int imageView5=0x7f090018;
-        public static final int imageView6=0x7f090019;
+        public static final int curren_price=0x7f090012;
+        public static final int description_title=0x7f09000f;
+        public static final int diference_price=0x7f090011;
+        public static final int diference_text=0x7f090010;
+        public static final int firs_row=0x7f090013;
+        public static final int header_container=0x7f09000a;
+        public static final int imageView1=0x7f090014;
+        public static final int imageView2=0x7f090015;
+        public static final int imageView3=0x7f090016;
+        public static final int imageView4=0x7f090018;
+        public static final int imageView5=0x7f090019;
+        public static final int imageView6=0x7f09001a;
         public static final int linear_one=0x7f090000;
         public static final int linerar_two=0x7f090003;
-        public static final int list_combustible=0x7f09000b;
-        public static final int list_image=0x7f09000d;
-        public static final int progress_bar=0x7f090008;
-        public static final int second_row=0x7f090016;
-        public static final int thumbnail=0x7f09000c;
+        public static final int list_combustible=0x7f09000c;
+        public static final int list_image=0x7f09000e;
+        public static final int pager=0x7f090008;
+        public static final int progress_bar=0x7f090009;
+        public static final int second_row=0x7f090017;
+        public static final int thumbnail=0x7f09000d;
         public static final int txtv_calculate=0x7f090006;
         public static final int txtv_connect=0x7f090002;
         public static final int txtv_maps=0x7f090007;
-        public static final int txtv_title=0x7f09000a;
+        public static final int txtv_title=0x7f09000b;
     }
     public static final class layout {
-        public static final int dashboard_activity=0x7f030000;
-        public static final int list_main_activity=0x7f030001;
-        public static final int list_row=0x7f030002;
-        public static final int station_selection=0x7f030003;
+        public static final int android_parent_pager=0x7f030000;
+        public static final int dashboard_activity=0x7f030001;
+        public static final int list_main_activity=0x7f030002;
+        public static final int list_row=0x7f030003;
+        public static final int station_selection=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;
