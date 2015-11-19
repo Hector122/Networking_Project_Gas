@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/ProjectNetworking/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="black">#000000</color>
     <color name="blue">#296BA7</color>
@@ -22,11 +22,11 @@
     <color name="title_color">#454545</color>
     <color name="white">#FFFFFF</color>
     <color name="yellow">#FEC42D</color>
-    <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/ProjectNetworking/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/ProjectNetworking/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="app_name">PersonalProject</string>
@@ -45,7 +45,7 @@
     <string name="title"> Title </string>
     <string name="title_row">Title of the row</string>
     <string name="url">http://www.seic.gov.do/rss/combustibles.aspx</string>
-    <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/ProjectNetworking/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--

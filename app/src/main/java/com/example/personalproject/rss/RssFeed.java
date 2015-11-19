@@ -5,13 +5,15 @@ import java.util.List;
 
 public class RssFeed {
 
-    private String title, link;
+    private String title;
+    private String link;
+
     private Calendar pubDate;
 
     private List<RssItem> description;
 
-    // private double gasolinaPremium, gasolinaRegular, gasoilPremium,
-    // gasoilRegular, kerosene, glp, gnv;
+
+    //Getters and setters.
 
     public final String getTitle() {
         return title;

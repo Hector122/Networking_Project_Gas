@@ -78,7 +78,7 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
             holder.price = (TextView) view.findViewById(R.id.curren_price);
             holder.description = (TextView) view
                     .findViewById(R.id.description_title);
-            holder.diferencePrice = (TextView) view
+            holder.differencePrice = (TextView) view
                     .findViewById(R.id.diference_price);
 
             // set the holder with LayoutInflater
@@ -88,16 +88,14 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
         }
 
         // Set Model values in Holder elements
-        Combustible combustible = (Combustible) adapterList.get(position);
+        Combustible combustible =  adapterList.get(position);
 
-        holder.price.setText(String.valueOf(context.getResources().getString(
-                R.string.rd_price_simbol)
-                + " " + combustible.getPrice()));
+        holder.price.setText(setNumberFormatToShow(combustible.getPrice()));
 
         holder.description.setText(combustible.getDescription());
 
-        holder.diferencePrice
-                .setText(String.valueOf(combustible.getLastPrice()));
+        holder.differencePrice
+                .setText(setNumberFormatToShow(combustible.getLastPrice()));
 
         holder.image.setImageResource(getCorrespondingImage(combustible));
 
@@ -110,6 +108,32 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
         return view;
     }
 
+
+    //TODO: check this.
+    private static String setNumberFormatToShow(double money){
+        String moneySymbol = "RD$";
+        String numberFormatted = "";
+
+        String number = String.valueOf(money);
+
+        if(number.contains(".")){
+            String [] numberSplit = number.split("\\.");
+            String decimalDigit = numberSplit[1];
+
+            if(decimalDigit.length() == 1){
+                decimalDigit += "0";
+
+                numberFormatted = numberSplit[0] + "." + decimalDigit;
+            }
+
+        }else {
+
+            numberFormatted = number + ".00";
+        }
+
+        return moneySymbol + numberFormatted;
+    }
+
     // private
     // byte[] decodedString =
     // Base64.decode(person_object.getPhoto(),Base64.NO_WRAP);
@@ -120,7 +144,7 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
     private int getCorrespondingImage(Combustible combustible) {
         int imageById = 0;
 
-        double lastPrice = combustible.getDescription() != null ? 0
+        double lastPrice = combustible.getDescription() != null ? 0.00
                 : combustible.getLastPrice();
 
         double currentPrice = combustible.getPrice();
@@ -173,7 +197,7 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
     public static class ViewHolder {
 
         public TextView price;
-        public TextView diferencePrice;
+        public TextView differencePrice;
         public TextView description;
         public ImageView image;
 

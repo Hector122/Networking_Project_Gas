@@ -82,4 +82,4 @@
         android:text="@string/sample_price"
         android:textSize="25sp" />
 
-</RelativeLayout><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/ProjectNetworking/app/src/main/res/layout/list_row.xml -->
+</RelativeLayout><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/list_row.xml -->

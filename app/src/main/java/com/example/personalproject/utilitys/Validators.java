@@ -4,12 +4,12 @@ public class Validators {
 
 	/**
 	 * Indicate true is one of the string pass in the param is null or empty. 
-	 * @param txtVarible
+	 * @param txtVariable
 	 *            String to verify.
 	 * @return boolean
 	 * */
-	public static boolean isNullOrEmpy(String... txtVarible) {
-		for (String text : txtVarible) {
+	public static boolean isNullOrEmpty(String... txtVariable) {
+		for (String text : txtVariable) {
 			if (text == null || text.isEmpty() || text.equals("")) {
 				return true;
 			}

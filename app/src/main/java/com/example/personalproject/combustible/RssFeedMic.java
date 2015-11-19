@@ -22,8 +22,8 @@ public class RssFeedMic {
 		return publicationDate;
 	}
 
-	public void setPublicationDate(String publicactionDate) {
-		this.publicationDate = publicactionDate;
+	public void setPublicationDate(String publicationDate) {
+		this.publicationDate = publicationDate;
 	}
 
 	public List<Combustible> getCombustibles() {

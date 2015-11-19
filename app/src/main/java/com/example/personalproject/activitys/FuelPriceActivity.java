@@ -45,7 +45,7 @@ public class FuelPriceActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_main_activity);
 
-        initializerVaribles();
+        initializerVariables();
         getRssMicAsyncTask();
 
     }
@@ -55,10 +55,10 @@ public class FuelPriceActivity extends Activity {
     }
 
     /**
-     * Initializer the varible.
+     * Initializer the variable.
      */
 
-    private void initializerVaribles() {
+    private void initializerVariables() {
         listView = (ListView) findViewById(R.id.list_combustible);
 
         mTitle = (TextView) findViewById(R.id.txtv_title);
@@ -84,7 +84,7 @@ public class FuelPriceActivity extends Activity {
     //TODO: check this
     // This function used by adapter
     public void onItemClick(int mPosition) {
-        Combustible tempValues = (Combustible) CustomListViewValuesArr
+        Combustible tempValues =  CustomListViewValuesArr
                 .get(mPosition);
 
         // SHOW ALERT
@@ -121,10 +121,10 @@ public class FuelPriceActivity extends Activity {
         }
 
         @Override
-        protected String doInBackground(Void... parms) {
+        protected String doInBackground(Void... params) {
             Client client = new Client();
 
-            //TODO: cache the data reciver.
+            //TODO: cache the data receiver.
 //            if (cache
 //                    .checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
 //                return cache
@@ -142,7 +142,7 @@ public class FuelPriceActivity extends Activity {
 
             try {
                 // TODO:Not cache for know
-                // setXmlInMemeoryCache(result);
+                // setXmlInMemoryCache(result);
 
                 mData = parser.readEntry(result); // parser.readEntry(result);
 

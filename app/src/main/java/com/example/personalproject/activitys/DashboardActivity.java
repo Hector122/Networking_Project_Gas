@@ -18,7 +18,7 @@ public class DashboardActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dashboard_activity);
 
-		initializerVaribles();
+		initializerVariables();
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class DashboardActivity extends Activity {
 		return true;
 	}
 
-	private void initializerVaribles() {
+	private void initializerVariables() {
 		mConnection = (ImageButton) findViewById(R.id.btn_connect);
 		mConnection.setOnClickListener(new OnClickListener() {
 

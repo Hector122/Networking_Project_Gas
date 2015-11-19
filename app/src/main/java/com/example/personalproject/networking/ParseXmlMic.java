@@ -3,7 +3,9 @@ package com.example.personalproject.networking;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -18,9 +20,14 @@ import com.example.personalproject.combustible.RssFeedMic;
 public class ParseXmlMic {
     private static final String NAMESPACE = "rssversion";
 
+
     private static final String ITEM = "item"; /* parent node */
     private static final String TITLE = "title";
     private static final String PUB_DATE = "pubDate";
+    private static final String DESCRIPTION = "description";
+
+
+    //TODO: this block now is never used
     private static final String GASOLINE_P = "gas95";
     private static final String GASOLINE_R = "gas89";
     private static final String DIESEL_P = "gasoilp";
@@ -32,7 +39,8 @@ public class ParseXmlMic {
 
 
     /***
-     * This function reader the xml data in the string format and return a RssFeeMic with all the data.
+     * This function reader the xml data in the string format and return a RssFeeMic with all
+     * the data need.
      *
      * @param result String with the inputStream in xml.
      * @return RssFeeMic
@@ -41,58 +49,190 @@ public class ParseXmlMic {
      */
     public RssFeedMic readEntry(String result) throws XmlPullParserException,
             IOException {
-        //used xml pullParse and not process Namespaces
+        //Used xml pullParse and not process Namespaces
         XmlPullParser parser = Xml.newPullParser();
         parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
         parser.setInput(new StringReader(result));
         parser.nextTag();
 
-        //TODO: remove logs
         while (parser.next() != XmlPullParser.END_DOCUMENT) {
-            Log.i("DEBUG_TAG", " is Not end_tag");
 
             if (parser.getEventType() != XmlPullParser.START_TAG) {
-                Log.i("DEBUG_TAG", " is start_tag");
+                //It's start_tag ;
                 continue;
             }
 
+            //Get the name of the tag
             String name = parser.getName();
-            Log.i("DEBUG_TAG: " , "name: " + name);
+
             if (name.equals(ITEM)) {
-                Log.i("DEBUG_TAG: " , "find Item Tag");
-                return readEntry(parser);
+                return readItem(parser);
             }
 
             parser.next();
-            System.out.println("enter the look is not end-document");
         }
 
         return new RssFeedMic();
     }
 
+    /***
+     * Read the Item xml <Item>{content}<Item/>
+     *
+     * @param parser
+     * @return
+     * @throws XmlPullParserException
+     * @throws IOException
+     */
 
-    private RssFeedMic readFeed(XmlPullParser parser)
+    private RssFeedMic readItem(XmlPullParser parser)
             throws XmlPullParserException, IOException {
+        String title = "";
+        String pubDate = "";
+
+        List<Combustible> combustibles = new ArrayList<Combustible>();
+
+        RssFeedMic rssFeedItem = new RssFeedMic();
+
+        int eventType = parser.getEventType();
 
         while (parser.next() != XmlPullParser.END_DOCUMENT) {
-            if (parser.getEventType() != XmlPullParser.START_TAG) {
+            if (eventType != XmlPullParser.START_TAG) {
                 continue;
             }
 
+            //TODO: set Description for parse no raw data.
             String name = parser.getName();
-            if (name.equals(ITEM)) {
-                return readEntry(parser);
-            } else{
-                skipTag(parser);
-            }
+            String text = null;
 
-            parser.next();
+            if (name != null) {
+                text = readText(parser);
+
+                if (name.equalsIgnoreCase(TITLE)) {
+                    title = text;
+
+                } else if (name.equalsIgnoreCase(PUB_DATE)) {
+                    pubDate = text;
+
+                } else if (name.equalsIgnoreCase(DESCRIPTION)) {
+                    combustibles = readDescriptionItem(text);
+
+                }
+            }
         }
 
-        return new RssFeedMic();
+        rssFeedItem.setTitle(title);
+        rssFeedItem.setPublicationDate(pubDate);
+        rssFeedItem.setCombustibles(combustibles);
+
+        return rssFeedItem;
     }
 
-    private RssFeedMic readEntry(XmlPullParser parser)
+    /***
+     *
+     * @param parser
+     * @throws XmlPullParserException
+     * @throws IOException
+     */
+
+    private void skipTag(XmlPullParser parser) throws XmlPullParserException,
+            IOException {
+        if (parser.getEventType() != XmlPullParser.START_TAG) {
+            throw new IllegalStateException();
+        }
+        int depth = 1;
+        while (depth != 0) {
+            switch (parser.next()) {
+                case XmlPullParser.END_TAG:
+                    depth--;
+                    break;
+                case XmlPullParser.START_TAG:
+                    depth++;
+                    break;
+            }
+        }
+    }
+
+    /**
+     * For the tags title and summary, extracts their text values.
+     *
+     * @param parser
+     * @return String
+     * @throws IOException
+     * @throws XmlPullParserException
+     */
+    private String readText(XmlPullParser parser) throws IOException,
+            XmlPullParserException {
+        String result = "";
+
+        if (parser.next() == XmlPullParser.TEXT) {
+            result = parser.getText();
+            parser.nextTag();
+        }
+
+        return result.trim();
+    }
+
+    /***
+     * return a list of Combustible.
+     *
+     * @param text
+     * @return
+     * @throws XmlPullParserException
+     * @throws IOException
+     */
+
+    private List<Combustible> readDescriptionItem(String text) throws XmlPullParserException, IOException {
+        XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+        factory.setNamespaceAware(true);
+
+        XmlPullParser xpp = factory.newPullParser();
+        xpp.setInput(new StringReader(text));
+
+        List<Combustible> combustiblesList = new ArrayList<Combustible>();
+
+        String temp = "";
+
+        //Get all the String in the xml.
+        while (xpp.getEventType() != XmlPullParser.END_DOCUMENT) {
+            System.out.println("eventType INSIDE: " + xpp.getEventType());
+
+            if (xpp.getEventType() == XmlPullParser.TEXT) {
+                temp += xpp.getText().trim() + "-";
+            }
+
+            xpp.next();
+        }
+
+        if (!temp.isEmpty()) {
+            temp = temp.replaceAll("--", "-").replaceAll("RD$", "");
+
+            String[] split = temp.split("-");
+
+            for (int i = 1; i < split.length; i += 2) {
+
+                Combustible combustible = new Combustible();
+                combustible.setDescription(split[1]);
+                combustible.setPrice(getMoneyWithoutSpecialCharacter(split[i + 1]));
+                combustible.setLastPrice(combustible.getPrice() + Math.random());
+
+                combustiblesList.add(combustible);
+
+            }
+        }
+
+        return combustiblesList;
+    }
+    
+     private double getMoneyWithoutSpecialCharacter(String value) throws NumberFormatException{
+         StringBuilder builder = new StringBuilder(value);
+         builder.replace(0, 3, "");
+
+         return Double.valueOf(builder.toString());
+     }
+
+
+    //TODO: second method to parse the data from description.
+    /*private RssFeedMic readEntry(XmlPullParser parser)
             throws XmlPullParserException, IOException {
         String title = "";
         String pubDate = "";
@@ -169,35 +309,5 @@ public class ParseXmlMic {
         rssFeedItem.setCombustibles(combustibles);
 
         return rssFeedItem;
-    }
-
-    private void skipTag(XmlPullParser parser) throws XmlPullParserException,
-            IOException {
-        if (parser.getEventType() != XmlPullParser.START_TAG) {
-            throw new IllegalStateException();
-        }
-        int depth = 1;
-        while (depth != 0) {
-            switch (parser.next()) {
-                case XmlPullParser.END_TAG:
-                    depth--;
-                    break;
-                case XmlPullParser.START_TAG:
-                    depth++;
-                    break;
-            }
-        }
-    }
-
-    // For the tags title and summary, extracts their text values.
-    private String readText(XmlPullParser parser) throws IOException,
-            XmlPullParserException {
-        String result = "";
-        if (parser.next() == XmlPullParser.TEXT) {
-            result = parser.getText();
-            parser.nextTag();
-        }
-
-        return result;
-    }
+    } */
 }

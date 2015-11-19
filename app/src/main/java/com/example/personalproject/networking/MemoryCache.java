@@ -22,7 +22,7 @@ public class MemoryCache {
 		return map;
 	}
 
-	public void clearCachMap() {
+	public void clearCacheMap() {
 		map.clear();
 	}
 

@@ -45,4 +45,4 @@
         android:listSelector="@drawable/default_list_row_selector"
         android:layout_marginTop="5dp" />
 
-</RelativeLayout><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/ProjectNetworking/app/src/main/res/layout/list_main_activity.xml -->
+</RelativeLayout><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/list_main_activity.xml -->
