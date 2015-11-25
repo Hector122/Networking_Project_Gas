@@ -42,6 +42,7 @@
     <string name="kerosene">Kerosene </string>
     <string name="rd_price_simbol">RD$ </string>
     <string name="sample_price">RD$266.90</string>
+    <string name="text_title"> Lorem Ipsum </string>
     <string name="title"> Title </string>
     <string name="title_row">Title of the row</string>
     <string name="url">http://www.seic.gov.do/rss/combustibles.aspx</string>

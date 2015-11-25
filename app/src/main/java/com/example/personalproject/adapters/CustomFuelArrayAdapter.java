@@ -38,7 +38,7 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
     private final ArrayList<Combustible> adapterList;
 
     public CustomFuelArrayAdapter(Activity context,
-                                  ArrayList<Combustible> adapterList, Resources resLocal) {
+                                  ArrayList<Combustible> adapterList) {
         this.context = context;
         this.adapterList = adapterList;
 

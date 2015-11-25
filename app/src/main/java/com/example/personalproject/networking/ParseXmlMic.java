@@ -209,14 +209,12 @@ public class ParseXmlMic {
             String[] split = temp.split("-");
 
             for (int i = 1; i < split.length; i += 2) {
-
                 Combustible combustible = new Combustible();
                 combustible.setDescription(split[1]);
                 combustible.setPrice(getMoneyWithoutSpecialCharacter(split[i + 1]));
                 combustible.setLastPrice(combustible.getPrice() + Math.random());
 
                 combustiblesList.add(combustible);
-
             }
         }
 

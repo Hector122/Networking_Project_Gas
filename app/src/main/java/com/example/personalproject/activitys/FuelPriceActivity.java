@@ -11,6 +11,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -33,7 +34,8 @@ public class FuelPriceActivity extends Activity {
     private RssFeedMic mData;
 
     // TextView that hold the title to show
-    private TextView mTitle;
+    private TextView mTitle, mSubTitle;
+
 
     // Custom Adapter to show the row
     CustomFuelArrayAdapter adapter;
@@ -62,6 +64,11 @@ public class FuelPriceActivity extends Activity {
         listView = (ListView) findViewById(R.id.list_combustible);
 
         mTitle = (TextView) findViewById(R.id.txtv_title);
+        mTitle.setVisibility(View.INVISIBLE);
+
+        mSubTitle = (TextView) findViewById(R.id.txtv_sub_title);
+        mSubTitle.setVisibility(View.INVISIBLE);
+
 
     }
 
@@ -69,22 +76,38 @@ public class FuelPriceActivity extends Activity {
         CustomListViewValuesArr = (ArrayList<Combustible>) mData
                 .getCombustibles();
 
-        Resources resources = getResources();
+        setTitle(mData.getTitle());
 
         // Create Custom Adapter
-        adapter = new CustomFuelArrayAdapter(this, CustomListViewValuesArr,
-                resources);
+        adapter = new CustomFuelArrayAdapter(this, CustomListViewValuesArr);
 
+        // AlphaAnimationAdapter animationAdapter = new AlphaAnimationAdapter(adapter);
         listView.setAdapter(adapter);
-
-        mTitle.setText(mData.getTitle());
-
     }
+
+    private void setTitle(String text) {
+
+        if (text.contains(":")) {
+            String[] splitTitle = text.split(":");
+
+            //Set the title
+            mTitle.setText(splitTitle[0]);
+            mSubTitle.setText(splitTitle[1]);
+        }
+
+        mTitle.setVisibility(View.VISIBLE);
+        mSubTitle.setVisibility(View.VISIBLE);
+    }
+
+
+    /**
+     * @param mPosition
+     */
 
     //TODO: check this
     // This function used by adapter
     public void onItemClick(int mPosition) {
-        Combustible tempValues =  CustomListViewValuesArr
+        Combustible tempValues = CustomListViewValuesArr
                 .get(mPosition);
 
         // SHOW ALERT

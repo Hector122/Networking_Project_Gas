@@ -12,6 +12,8 @@
     <string name="desc">image</string>
     <string name="rd_price_simbol">RD$ </string>
 
+    <string name="text_title"> Lorem Ipsum </string>
+
     <!-- Fuel Description -->
     <string name="gasolina_premiun">Gasolina Premium </string>
     <string name="gasolina_regular">Gasolina Regular </string>

@@ -13,8 +13,9 @@
         android:id="@+id/thumbnail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
+        android:layout_marginEnd="0dp"
         android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
         android:background="@drawable/ic_action_collapse"
         android:padding="3dip" >
 
@@ -22,8 +23,8 @@
             android:id="@+id/list_image"
             android:layout_width="70dip"
             android:layout_height="70dip"
-            android:layout_marginBottom="5dip"
-            android:layout_marginTop="5dip"
+            android:layout_marginBottom="2dip"
+            android:layout_marginTop="2dip"
             android:contentDescription="@string/desc"
             android:src="@drawable/arrow_ecuals_yellow" />
 
@@ -36,17 +37,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/thumbnail"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/thumbnail"
         android:gravity="center_horizontal"
-        android:text="@string/title_row"
+        android:text="@string/text_title"
         android:textColor="#040404"
         android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="sans" />
 
-    <!-- Direfence with the last price -->
+    <!-- Defence with the last price -->
 
     <TextView
         android:id="@+id/diference_text"

@@ -8,33 +8,37 @@
 package com.example.personalproject;
 
 public final class R {
+    public static final class anim {
+        public static final int fade_in=0x7f040000;
+        public static final int fede_out=0x7f040001;
+    }
     public static final class attr {
     }
     public static final class color {
-        public static final int black=0x7f060000;
-        public static final int blue=0x7f060001;
-        public static final int bright_red=0x7f060002;
-        public static final int brown=0x7f060003;
-        public static final int dark_gray=0x7f060004;
-        public static final int dark_pink=0x7f060005;
-        public static final int dark_red=0x7f060006;
-        public static final int detail_color=0x7f060007;
-        public static final int divider_color=0x7f060008;
-        public static final int gray=0x7f060009;
-        public static final int green=0x7f06000a;
-        public static final int light_gray=0x7f06000b;
-        public static final int light_gray_2=0x7f06000c;
-        public static final int orange=0x7f06000d;
-        public static final int pink=0x7f06000e;
-        public static final int purple=0x7f06000f;
-        public static final int red=0x7f060010;
-        public static final int title_color=0x7f060011;
-        public static final int white=0x7f060012;
-        public static final int yellow=0x7f060013;
+        public static final int black=0x7f070000;
+        public static final int blue=0x7f070001;
+        public static final int bright_red=0x7f070002;
+        public static final int brown=0x7f070003;
+        public static final int dark_gray=0x7f070004;
+        public static final int dark_pink=0x7f070005;
+        public static final int dark_red=0x7f070006;
+        public static final int detail_color=0x7f070007;
+        public static final int divider_color=0x7f070008;
+        public static final int gray=0x7f070009;
+        public static final int green=0x7f07000a;
+        public static final int light_gray=0x7f07000b;
+        public static final int light_gray_2=0x7f07000c;
+        public static final int orange=0x7f07000d;
+        public static final int pink=0x7f07000e;
+        public static final int purple=0x7f07000f;
+        public static final int red=0x7f070010;
+        public static final int title_color=0x7f070011;
+        public static final int white=0x7f070012;
+        public static final int yellow=0x7f070013;
     }
     public static final class dimen {
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int arrow_=0x7f020000;
@@ -54,34 +58,35 @@ public final class R {
         public static final int word_map=0x7f02000e;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001b;
-        public static final int btn_calculate=0x7f090004;
-        public static final int btn_connect=0x7f090001;
-        public static final int btn_maps=0x7f090005;
-        public static final int curren_price=0x7f090012;
-        public static final int description_title=0x7f09000f;
-        public static final int diference_price=0x7f090011;
-        public static final int diference_text=0x7f090010;
-        public static final int firs_row=0x7f090013;
-        public static final int header_container=0x7f09000a;
-        public static final int imageView1=0x7f090014;
-        public static final int imageView2=0x7f090015;
-        public static final int imageView3=0x7f090016;
-        public static final int imageView4=0x7f090018;
-        public static final int imageView5=0x7f090019;
-        public static final int imageView6=0x7f09001a;
-        public static final int linear_one=0x7f090000;
-        public static final int linerar_two=0x7f090003;
-        public static final int list_combustible=0x7f09000c;
-        public static final int list_image=0x7f09000e;
-        public static final int pager=0x7f090008;
-        public static final int progress_bar=0x7f090009;
-        public static final int second_row=0x7f090017;
-        public static final int thumbnail=0x7f09000d;
-        public static final int txtv_calculate=0x7f090006;
-        public static final int txtv_connect=0x7f090002;
-        public static final int txtv_maps=0x7f090007;
-        public static final int txtv_title=0x7f09000b;
+        public static final int action_settings=0x7f0a001c;
+        public static final int btn_calculate=0x7f0a0004;
+        public static final int btn_connect=0x7f0a0001;
+        public static final int btn_maps=0x7f0a0005;
+        public static final int curren_price=0x7f0a0013;
+        public static final int description_title=0x7f0a0010;
+        public static final int diference_price=0x7f0a0012;
+        public static final int diference_text=0x7f0a0011;
+        public static final int firs_row=0x7f0a0014;
+        public static final int header_container=0x7f0a000a;
+        public static final int imageView1=0x7f0a0015;
+        public static final int imageView2=0x7f0a0016;
+        public static final int imageView3=0x7f0a0017;
+        public static final int imageView4=0x7f0a0019;
+        public static final int imageView5=0x7f0a001a;
+        public static final int imageView6=0x7f0a001b;
+        public static final int linear_one=0x7f0a0000;
+        public static final int linerar_two=0x7f0a0003;
+        public static final int list_combustible=0x7f0a000d;
+        public static final int list_image=0x7f0a000f;
+        public static final int pager=0x7f0a0008;
+        public static final int progress_bar=0x7f0a0009;
+        public static final int second_row=0x7f0a0018;
+        public static final int thumbnail=0x7f0a000e;
+        public static final int txtv_calculate=0x7f0a0006;
+        public static final int txtv_connect=0x7f0a0002;
+        public static final int txtv_maps=0x7f0a0007;
+        public static final int txtv_sub_title=0x7f0a000c;
+        public static final int txtv_title=0x7f0a000b;
     }
     public static final class layout {
         public static final int android_parent_pager=0x7f030000;
@@ -91,26 +96,27 @@ public final class R {
         public static final int station_selection=0x7f030004;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int action_settings=0x7f070000;
-        public static final int app_name=0x7f070001;
-        public static final int connect=0x7f070002;
-        public static final int desc=0x7f070003;
-        public static final int diference_text=0x7f070004;
-        public static final int gasoil_premiun=0x7f070005;
-        public static final int gasoil_regular=0x7f070006;
-        public static final int gasolina_premiun=0x7f070007;
-        public static final int gasolina_regular=0x7f070008;
-        public static final int glp=0x7f070009;
-        public static final int gnv=0x7f07000a;
-        public static final int kerosene=0x7f07000b;
-        public static final int rd_price_simbol=0x7f07000c;
-        public static final int sample_price=0x7f07000d;
-        public static final int title=0x7f07000e;
-        public static final int title_row=0x7f07000f;
-        public static final int url=0x7f070010;
+        public static final int action_settings=0x7f080000;
+        public static final int app_name=0x7f080001;
+        public static final int connect=0x7f080002;
+        public static final int desc=0x7f080003;
+        public static final int diference_text=0x7f080004;
+        public static final int gasoil_premiun=0x7f080005;
+        public static final int gasoil_regular=0x7f080006;
+        public static final int gasolina_premiun=0x7f080007;
+        public static final int gasolina_regular=0x7f080008;
+        public static final int glp=0x7f080009;
+        public static final int gnv=0x7f08000a;
+        public static final int kerosene=0x7f08000b;
+        public static final int rd_price_simbol=0x7f08000c;
+        public static final int sample_price=0x7f08000d;
+        public static final int text_title=0x7f08000e;
+        public static final int title=0x7f08000f;
+        public static final int title_row=0x7f080010;
+        public static final int url=0x7f080011;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 
@@ -121,9 +127,9 @@ public final class R {
             backward-compatibility can go here.
         
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f060000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f060001;
     }
 }
