@@ -49,7 +49,6 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-
         return adapterList.size();
     }
 
@@ -79,7 +78,7 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
             holder.description = (TextView) view
                     .findViewById(R.id.description_title);
             holder.differencePrice = (TextView) view
-                    .findViewById(R.id.diference_price);
+                    .findViewById(R.id.difference_price_value);
 
             // set the holder with LayoutInflater
             view.setTag(holder);
@@ -88,14 +87,13 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
         }
 
         // Set Model values in Holder elements
-        Combustible combustible =  adapterList.get(position);
+        Combustible combustible = adapterList.get(position);
 
         holder.price.setText(setNumberFormatToShow(combustible.getPrice()));
 
-        holder.description.setText(combustible.getDescription());
+        holder.differencePrice.setText(setNumberFormatToShow(combustible.getLastPrice() - combustible.getPrice()));
 
-        holder.differencePrice
-                .setText(setNumberFormatToShow(combustible.getLastPrice()));
+        holder.description.setText(combustible.getDescription());
 
         holder.image.setImageResource(getCorrespondingImage(combustible));
 
@@ -110,23 +108,27 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
 
 
     //TODO: check this.
-    private static String setNumberFormatToShow(double money){
+    private static String setNumberFormatToShow(double money) {
         String moneySymbol = "RD$";
         String numberFormatted = "";
 
         String number = String.valueOf(money);
 
-        if(number.contains(".")){
-            String [] numberSplit = number.split("\\.");
+        if (number.contains(".")) {
+            String[] numberSplit = number.split("\\.");
             String decimalDigit = numberSplit[1];
 
-            if(decimalDigit.length() == 1){
+            if (decimalDigit.length() < 2) {
                 decimalDigit += "0";
+
+                numberFormatted = numberSplit[0] + "." + decimalDigit;
+            } else if (decimalDigit.length() > 2) {
+                decimalDigit = decimalDigit.substring(0, 2);
 
                 numberFormatted = numberSplit[0] + "." + decimalDigit;
             }
 
-        }else {
+        } else {
 
             numberFormatted = number + ".00";
         }
@@ -144,8 +146,7 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
     private int getCorrespondingImage(Combustible combustible) {
         int imageById = 0;
 
-        double lastPrice = combustible.getDescription() != null ? 0.00
-                : combustible.getLastPrice();
+        double lastPrice = combustible.getLastPrice();
 
         double currentPrice = combustible.getPrice();
 
@@ -165,8 +166,8 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
         return imageById;
     }
 
-    public int getDiferencePrice(Combustible combustible) {
-        return (int) (combustible.getPrice() - combustible.getLastPrice());
+    public double getDifferencePrice(Combustible combustible) {
+        return (combustible.getPrice() - combustible.getLastPrice());
     }
 
     public Bitmap getRoundedCornerBitmap(Bitmap bitmap) {

@@ -50,25 +50,26 @@
     <!-- Defence with the last price -->
 
     <TextView
-        android:id="@+id/diference_text"
-        android:layout_width="fill_parent"
+        android:id="@+id/difference_price_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/description_title"
         android:layout_marginTop="2dip"
         android:layout_toEndOf="@+id/thumbnail"
         android:layout_toRightOf="@+id/thumbnail"
-        android:text="@string/diference_text"
+        android:text="@string/difference_text"
         android:textColor="#343434"
         android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/diference_price"
-        android:layout_width="fill_parent"
+        android:id="@+id/difference_price_value"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/description_title"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="2dip"
-        android:layout_toRightOf="@+id/diference_text"
+        android:layout_marginTop="4dip"
+        android:layout_toRightOf="@id/difference_price_text"
+        android:text="RD$195"
         android:textColor="#343434"
         android:textSize="12sp" />
 

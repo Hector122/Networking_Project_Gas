@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -210,9 +211,20 @@ public class ParseXmlMic {
 
             for (int i = 1; i < split.length; i += 2) {
                 Combustible combustible = new Combustible();
-                combustible.setDescription(split[1]);
+                combustible.setDescription(split[i]);
                 combustible.setPrice(getMoneyWithoutSpecialCharacter(split[i + 1]));
-                combustible.setLastPrice(combustible.getPrice() + Math.random());
+
+                //TODO: remove went you save the data.
+                Random random  = new Random();
+                double number = random.nextInt(23 -(- 7));
+
+                Log.i("TAG_Number", String.valueOf(number));
+
+               // (Math.nextI * 4)
+
+                combustible.setLastPrice(combustible.getPrice() + number);
+
+                Log.i("TAG_Price", String.valueOf(combustible.getLastPrice()));
 
                 combustiblesList.add(combustible);
             }

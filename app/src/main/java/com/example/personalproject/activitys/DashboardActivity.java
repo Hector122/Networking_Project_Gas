@@ -43,5 +43,4 @@ public class DashboardActivity extends Activity {
 		Intent intent = new Intent(this, FuelPriceActivity.class);
 		startActivity(intent);
 	}
-
 }

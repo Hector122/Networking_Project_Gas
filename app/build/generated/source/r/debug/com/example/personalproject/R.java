@@ -64,8 +64,8 @@ public final class R {
         public static final int btn_maps=0x7f0a0005;
         public static final int curren_price=0x7f0a0013;
         public static final int description_title=0x7f0a0010;
-        public static final int diference_price=0x7f0a0012;
-        public static final int diference_text=0x7f0a0011;
+        public static final int difference_price_text=0x7f0a0011;
+        public static final int difference_price_value=0x7f0a0012;
         public static final int firs_row=0x7f0a0014;
         public static final int header_container=0x7f0a000a;
         public static final int imageView1=0x7f0a0015;
@@ -103,7 +103,7 @@ public final class R {
         public static final int app_name=0x7f080001;
         public static final int connect=0x7f080002;
         public static final int desc=0x7f080003;
-        public static final int diference_text=0x7f080004;
+        public static final int difference_text=0x7f080004;
         public static final int gasoil_premiun=0x7f080005;
         public static final int gasoil_regular=0x7f080006;
         public static final int gasolina_premiun=0x7f080007;

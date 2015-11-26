@@ -81,12 +81,11 @@ public class FuelPriceActivity extends Activity {
         // Create Custom Adapter
         adapter = new CustomFuelArrayAdapter(this, CustomListViewValuesArr);
 
-        // AlphaAnimationAdapter animationAdapter = new AlphaAnimationAdapter(adapter);
+        //AlphaAnimationAdapter animationAdapter = new AlphaAnimationAdapter(adapter);
         listView.setAdapter(adapter);
     }
 
     private void setTitle(String text) {
-
         if (text.contains(":")) {
             String[] splitTitle = text.split(":");
 
@@ -98,7 +97,6 @@ public class FuelPriceActivity extends Activity {
         mTitle.setVisibility(View.VISIBLE);
         mSubTitle.setVisibility(View.VISIBLE);
     }
-
 
     /**
      * @param mPosition
