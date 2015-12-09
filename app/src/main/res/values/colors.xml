@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
 
+    <!-- Color matherial desings-->
+    <color name="colorPrimary">#0288D1</color>
+    <color name="colorPrimaryDark">#01579B</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#039BE5</color>
+
+    <!-- Color used in the app-->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="green">#1DC042</color>
@@ -13,7 +23,7 @@
     <color name="purple">#CF67EA</color>
     <color name="red">#E24227</color>
     <color name="dark_red">#A71E12</color>
-    <color name="gray">#AFB0B3</color>
+    <color name="grayIUU">#AFB0B3</color>
     <color name="light_gray">#F2F2F2</color>
     <color name="light_gray_2">#F3F3F3</color>
     <color name="dark_gray">#CCCCCC</color>
@@ -23,3 +33,7 @@
     <color name="detail_color">#6F6F6F</color>
 
 </resources>
+
+
+
+

@@ -1,0 +1,27 @@
+<resources>
+
+    <!--
+        Base application theme for API 21+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 21+ devices. and include
+        material design.
+    -->
+
+    <style name="CustomTheme" parent="Theme.AppCompat.Light">
+
+        <!-- ...and here we setting appcompat’s color theming attrs -->
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/navigationBarColor </item>
+        <item name="android:windowBackground">@color/textColorPrimary</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:displayOptions">disableHome</item>
+
+    </style>
+
+
+
+
+
+
+</resources>

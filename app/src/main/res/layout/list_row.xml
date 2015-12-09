@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@color/windowBackground"
     android:orientation="horizontal"
     android:padding="10dip"
     android:clickable="true" >
@@ -70,7 +70,7 @@
         android:layout_marginTop="4dip"
         android:layout_toRightOf="@id/difference_price_text"
         android:text="RD$195"
-        android:textColor="#343434"
+        android:textColor="@color/black"
         android:textSize="12sp" />
 
     <!-- Current Price -->
