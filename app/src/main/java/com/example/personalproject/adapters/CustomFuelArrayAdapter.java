@@ -82,6 +82,7 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
 
             // set the holder with LayoutInflater
             view.setTag(holder);
+
         } else {
             holder = (ViewHolder) view.getTag();
         }
@@ -90,14 +91,9 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
         Combustible combustible = adapterList.get(position);
 
         holder.price.setText(setNumberFormatToShow(combustible.getPrice()));
-
         holder.differencePrice.setText(setNumberFormatToShow(combustible.getLastPrice() - combustible.getPrice()));
-
         holder.description.setText(combustible.getDescription());
-
         holder.image.setImageResource(getCorrespondingImage(combustible));
-
-        // holder.image.setImageBitmap(getRoundedCornerBitmap(getCorrespondingImage(combustible)));
 
         // set item click listener
 
@@ -170,27 +166,6 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
         return (combustible.getPrice() - combustible.getLastPrice());
     }
 
-    public Bitmap getRoundedCornerBitmap(Bitmap bitmap) {
-        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
-                bitmap.getHeight(), Config.ARGB_8888);
-        Canvas canvas = new Canvas(output);
-
-        final int color = 0xff424242;
-        final Paint paint = new Paint();
-        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-        final RectF rectF = new RectF(rect);
-        final float roundPx = 12;
-
-        paint.setAntiAlias(true);
-        canvas.drawARGB(0, 0, 0, 0);
-        paint.setColor(color);
-        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
-
-        paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
-        canvas.drawBitmap(bitmap, rect, rect, paint);
-
-        return output;
-    }
 
     /*********
      * Create a holder Class to contain inflated xml file elements

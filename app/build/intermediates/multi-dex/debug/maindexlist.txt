@@ -1,0 +1,110 @@
+
+android/support/v7/widget/LinearLayoutCompat$DividerMode.class
+android/support/annotation/AnimRes.class
+android/support/annotation/RawRes.class
+android/support/v4/widget/SwipeRefreshLayout.class
+android/support/v7/widget/ActionMenuView$LayoutParams.class
+android/support/v7/app/ActionBar$LayoutParams.class
+android/support/annotation/StringDef.class
+com/nhaarman/listviewanimations/appearance/simple/AlphaInAnimationAdapter.class
+android/support/annotation/LayoutRes.class
+android/support/annotation/FractionRes.class
+-keep class com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity { <init>(); }
+android/support/annotation/XmlRes.class
+android/support/annotation/StringRes.class
+android/support/annotation/StyleableRes.class
+android/support/annotation/ColorRes.class
+android/support/v4/widget/MaterialProgressDrawable$2.class
+-keep public class * extends java.lang.annotation.Annotation {
+android/support/annotation/AnyRes.class
+android/support/annotation/DimenRes.class
+android/support/annotation/InterpolatorRes.class
+android/support/v7/internal/view/menu/MenuItemImpl.class
+android/support/v4/widget/MaterialProgressDrawable$Ring.class
+android/support/annotation/IntegerRes.class
+com/example/personalproject/activitys/FuelPriceActivity$1.class
+android/support/v7/internal/widget/ViewUtils.class
+android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
+android/support/annotation/MenuRes.class
+android/support/v7/internal/widget/AdapterViewCompat.class
+android/support/v4/widget/CursorAdapter.class
+android/support/v4/widget/DrawerLayout$State.class
+android/support/v4/view/ViewCompat$AccessibilityLiveRegion.class
+com/nhaarman/listviewanimations/appearance/AnimationAdapter.class
+android/support/v7/widget/LinearLayoutCompat.class
+android/support/v4/view/ViewCompat$LayerType.class
+android/support/v4/widget/DrawerLayout$LockMode.class
+android/support/annotation/IntDef.class
+android/support/v4/view/ViewCompat$ResolvedLayoutDirectionMode.class
+android/support/v4/app/FragmentTransaction$Transit.class
+-keep public class * extends android.app.backup.BackupAgent {
+com/example/personalproject/activitys/FuelPriceActivity$DownloadRSS.class
+com/example/personalproject/networking/MemoryCache.class
+com/nhaarman/listviewanimations/util/Insertable.class
+android/support/v7/app/ActionBar$TabListener.class
+com/nhaarman/listviewanimations/util/Swappable.class
+android/support/v4/widget/MaterialProgressDrawable$ProgressDrawableSize.class
+-keep class com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity { <init>(); }
+com/nhaarman/listviewanimations/BaseAdapterDecorator.class
+android/support/annotation/DrawableRes.class
+android/support/v4/app/NotificationCompat$Builder.class
+android/support/v7/app/ActionBar$OnNavigationListener.class
+android/support/v4/view/ViewCompat$ImportantForAccessibility.class
+android/support/v7/widget/StaggeredGridLayoutManager.class
+}
+android/support/v7/view/ActionMode$Callback.class
+android/support/v7/appcompat/R$styleable.class
+com/example/personalproject/activitys/FuelPriceActivity.class
+com/example/personalproject/combustible/Combustible.class
+android/support/v4/widget/SimpleCursorAdapter.class
+android/support/v7/widget/RecyclerView$LayoutManager.class
+android/support/annotation/AttrRes.class
+android/support/v7/app/ActionBar$NavigationMode.class
+android/support/annotation/StyleRes.class
+com/nhaarman/listviewanimations/itemmanipulation/animateaddition/AnimateAdditionAdapter.class
+com/example/personalproject/combustible/RssFeedMic.class
+android/support/v4/view/MenuCompat.class
+android/support/v4/widget/MaterialProgressDrawable.class
+    *;
+android/support/v7/widget/RecyclerView$ItemDecoration.class
+android/support/v7/internal/widget/TintTypedArray.class
+android/support/v7/app/ActionBar$Tab.class
+android/support/annotation/ArrayRes.class
+android/support/annotation/PluralsRes.class
+-keep class com.example.personalproject.activitys.DashboardActivity { <init>(); }
+android/support/v4/widget/MaterialProgressDrawable$3.class
+android/support/v7/appcompat/R.class
+android/support/v7/app/ActionBar$OnMenuVisibilityListener.class
+android/support/v4/widget/MaterialProgressDrawable$StartCurveInterpolator.class
+-keep class null {
+android/support/annotation/NonNull.class
+-keep class com.example.personalproject.activitys.FuelPriceActivity { <init>(); }
+android/support/v4/view/ViewCompat.class
+android/support/v4/widget/ResourceCursorAdapter.class
+android/support/annotation/Nullable.class
+com/example/personalproject/activitys/DashboardActivity$1.class
+android/support/v7/app/ActionBar$Callback.class
+android/support/v4/app/FragmentTabHost.class
+android/support/v7/widget/LinearLayoutCompat$LayoutParams.class
+-keep class android.support.v7.widget.TestActivity { <init>(); }
+android/support/v7/app/ActionBar.class
+android/support/v4/widget/SlidingPaneLayout.class
+android/support/v4/view/ViewCompat$OverScroll.class
+android/support/v7/view/ActionMode.class
+android/support/v4/widget/MaterialProgressDrawable$EndCurveInterpolator.class
+android/support/v7/app/ActionBar$DisplayOptions.class
+android/support/v4/app/ActionBarDrawerToggle.class
+    void attachBaseContext(android.content.Context);
+com/nhaarman/listviewanimations/util/ListViewWrapperSetter.class
+android/support/v4/view/ViewCompat$LayoutDirectionMode.class
+com/example/personalproject/adapters/CustomFuelArrayAdapter.class
+android/support/v4/app/DialogFragment$DialogStyle.class
+com/example/personalproject/activitys/DashboardActivity.class
+android/support/annotation/BoolRes.class
+android/support/v4/view/GravityCompat.class
+android/support/annotation/IdRes.class
+    <init>();
+android/support/v4/app/FragmentManager.class
+android/support/annotation/AnimatorRes.class
+android/support/v4/widget/DrawerLayout$EdgeGravity.class
+android/support/v4/widget/MaterialProgressDrawable$1.class

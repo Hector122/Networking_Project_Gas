@@ -15,6 +15,7 @@ ADDED from /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/a
 		INJECTED from /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/AndroidManifest.xml
 uses-sdk
 ADDED from /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:multidex:1.0.1] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:appcompat-v7:21.0.3] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/AndroidManifest.xml:15:5-42
 MERGED from [com.android.support:support-v4:21.0.3] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/AndroidManifest.xml:15:5-42
 MERGED from [com.android.support:recyclerview-v7:21.0.3] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/AndroidManifest.xml:15:5-42
@@ -22,6 +23,8 @@ MERGED from [com.android.support:support-v4:21.0.3] /Users/hector castillo/Andro
 MERGED from [com.android.support:cardview-v7:21.0.3] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/AndroidManifest.xml:15:5-42
 MERGED from [com.android.support:palette-v7:21.0.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/palette-v7/21.0.0/AndroidManifest.xml:15:5-42
 MERGED from [com.android.support:support-v4:21.0.3] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/AndroidManifest.xml:15:5-42
+MERGED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:22:5-24:41
+MERGED from [com.nhaarman.listviewanimations:lib-core-slh:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/AndroidManifest.xml:22:5-24:41
 	android:targetSdkVersion
 		ADDED from /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/AndroidManifest.xml:9:9-38
 		INJECTED from /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/AndroidManifest.xml
@@ -47,6 +50,8 @@ MERGED from [com.android.support:support-v4:21.0.3] /Users/hector castillo/Andro
 MERGED from [com.android.support:cardview-v7:21.0.3] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/AndroidManifest.xml:16:5-19
 MERGED from [com.android.support:palette-v7:21.0.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/palette-v7/21.0.0/AndroidManifest.xml:16:5-17:19
 MERGED from [com.android.support:support-v4:21.0.3] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/AndroidManifest.xml:16:5-19
+MERGED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:26:5-29:19
+MERGED from [com.nhaarman.listviewanimations:lib-core-slh:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/AndroidManifest.xml:26:5-27:19
 	android:label
 		ADDED from /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/AndroidManifest.xml:17:9-41
 	android:allowBackup
@@ -85,3 +90,11 @@ ADDED from [com.android.support:recyclerview-v7:21.0.3] /Users/hector castillo/A
 		ADDED from [com.android.support:recyclerview-v7:21.0.3] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/AndroidManifest.xml:18:19-59
 	android:name
 		ADDED from [com.android.support:recyclerview-v7:21.0.3] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/AndroidManifest.xml:18:60-113
+activity#com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity
+ADDED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:27:9-129
+	android:name
+		ADDED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:27:19-126
+activity#com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity
+ADDED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:28:9-122
+	android:name
+		ADDED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:28:19-119

@@ -9,6 +9,20 @@
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-8c1fe4cb63d9c081802acda08b1cdc303592de00.jar" />
     </item>
     <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core/3.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="acf66033b1418ccf9e15c8e77750981e4809c4ea">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-4cf3b63d782c795e8bea5290cd0d4deb3f93e0d0.jar" />
+    </item>
+    <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/nineoldandroids-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-91f28ce8dd35f8e27f3d161c9599c3b0890bfcbe.jar" />
+    </item>
+    <item
         jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
@@ -16,11 +30,39 @@
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-90e8bc649223b417b3818c74a464d2d706bb9769.jar" />
     </item>
     <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/palette-v7/21.0.0/jars/classes.jar"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="b65c2fede61220ed2b6a063f11ca13160910089e">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-e63d5564bd0151c75b8ed99214c6d6798fc623a0.jar" />
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-f1ae27ff4a9f945c10c3ac208fb16b3fbc264ec9.jar" />
+    </item>
+    <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="49223278ec2ede1d05d00868c5ce3e077b4016f8">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-74f2f05a2b5a0a7c2ddd558dee9da7ff178b639b.jar" />
+    </item>
+    <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/listviewanimations_lib-core_3.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f3f9629b068554d8513a2aaf34418171bf430851">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/listviewanimations_lib-core_3.1.0-595fbcb922918d8042bdddf8241a6a6e2c5cfa7a.jar" />
+    </item>
+    <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-dda3630ce8bb493d278fa6bbf35110d1781c75e9.jar" />
+    </item>
+    <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-8af1e1b4bfde14de475400a09c2c1b7cc764a54d.jar" />
     </item>
     <item
         jar="/Users/hector castillo/Desktop/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
@@ -37,39 +79,11 @@
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-e621c221c19ed31f56cee4771c80af40c4f26b28.jar" />
     </item>
     <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/jars/classes.jar"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/palette-v7/21.0.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-dda3630ce8bb493d278fa6bbf35110d1781c75e9.jar" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-f1ae27ff4a9f945c10c3ac208fb16b3fbc264ec9.jar" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/listviewanimations_lib-core_3.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f3f9629b068554d8513a2aaf34418171bf430851">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/listviewanimations_lib-core_3.1.0-595fbcb922918d8042bdddf8241a6a6e2c5cfa7a.jar" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/nineoldandroids-2.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-91f28ce8dd35f8e27f3d161c9599c3b0890bfcbe.jar" />
-    </item>
-    <item
-        jar="/Users/hector castillo/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.0/7ff0e000d1e27e356567f56c92af3b8ab912636f/picasso-2.5.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="7ff0e000d1e27e356567f56c92af3b8ab912636f">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/picasso-2.5.0-3b72c45913584d9f6214cde3d97a06976f63c73a.jar" />
+        sha1="b65c2fede61220ed2b6a063f11ca13160910089e">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/pre-dexed/debug/classes-e63d5564bd0151c75b8ed99214c6d6798fc623a0.jar" />
     </item>
 
 </items>

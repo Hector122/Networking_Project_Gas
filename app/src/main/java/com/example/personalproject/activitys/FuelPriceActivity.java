@@ -25,6 +25,7 @@ import com.example.personalproject.combustible.RssFeedMic;
 import com.example.personalproject.networking.Client;
 import com.example.personalproject.networking.MemoryCache;
 import com.example.personalproject.networking.ParseXmlMic;
+import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
 
 public class FuelPriceActivity extends Activity {
     // List view to content XML layout
@@ -38,7 +39,9 @@ public class FuelPriceActivity extends Activity {
 
 
     // Custom Adapter to show the row
-    CustomFuelArrayAdapter adapter;
+    CustomFuelArrayAdapter mAdapter;
+
+    private static final String TAG = "TAG_EXCEPTION";
 
     // List with all parse.
     private ArrayList<Combustible> CustomListViewValuesArr;
@@ -79,10 +82,19 @@ public class FuelPriceActivity extends Activity {
         setTitle(mData.getTitle());
 
         // Create Custom Adapter
-        adapter = new CustomFuelArrayAdapter(this, CustomListViewValuesArr);
+        mAdapter = new CustomFuelArrayAdapter(this, CustomListViewValuesArr);
 
-        //AlphaAnimationAdapter animationAdapter = new AlphaAnimationAdapter(adapter);
-        listView.setAdapter(adapter);
+
+        //Old
+        //listView.setAdapter(mAdapter);
+
+        //Animation the list view wrapping the adapter.
+        AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(mAdapter);
+        animationAdapter.setAbsListView(listView);
+        listView.setAdapter(animationAdapter);
+
+
+
     }
 
     private void setTitle(String text) {
@@ -145,14 +157,14 @@ public class FuelPriceActivity extends Activity {
         protected String doInBackground(Void... params) {
             Client client = new Client();
 
-            //TODO: cache the data receiver.
-//            if (cache
-//                    .checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
-//                return cache
-//                        .getValueFromCache(ActivityConstants.EXTRA_XML_MIC_CACHE);
-//            } else {
-            return client.getRSS(getResources().getString(R.string.url));
-            //}
+            // cache the data receiver is not exist.
+            if (cache
+                    .checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
+                return cache
+                        .getValueFromCache(ActivityConstants.EXTRA_XML_MIC_CACHE);
+            } else {
+                return client.getRSS(getResources().getString(R.string.url));
+            }
         }
 
         @Override
@@ -165,18 +177,16 @@ public class FuelPriceActivity extends Activity {
                 // TODO:Not cache for know
                 // setXmlInMemoryCache(result);
 
-                mData = parser.readEntry(result); // parser.readEntry(result);
-
+                mData = parser.readEntry(result);
 
                 setListViewCustomAdapter();
 
             } catch (XmlPullParserException e) {
-                Log.e("FuelPriceActivity.XmlPullParserException --> ",
-                        e.getMessage());
+                Log.e(TAG, e.getMessage());
                 e.printStackTrace();
 
             } catch (IOException e) {
-                Log.e("FuelPriceActivity.IOException -->", e.getMessage());
+                Log.e(TAG, e.getMessage());
                 e.printStackTrace();
             }
         }

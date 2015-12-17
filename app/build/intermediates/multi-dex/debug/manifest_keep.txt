@@ -1,0 +1,15 @@
+-keep class null {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+-keep class com.example.personalproject.activitys.FuelPriceActivity { <init>(); }
+-keep class com.example.personalproject.activitys.DashboardActivity { <init>(); }
+-keep class android.support.v7.widget.TestActivity { <init>(); }
+-keep class com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity { <init>(); }
+-keep class com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity { <init>(); }
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+-keep public class * extends java.lang.annotation.Annotation {
+    *;
+}
