@@ -1,47 +1,51 @@
 package com.example.personalproject.activitys;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-import org.xmlpull.v1.XmlPullParserException;
-
 import android.app.Activity;
-import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.personalproject.R;
-import com.example.personalproject.utilitys.ActivityConstants;
 import com.example.personalproject.adapters.CustomFuelArrayAdapter;
 import com.example.personalproject.combustible.Combustible;
 import com.example.personalproject.combustible.RssFeedMic;
 import com.example.personalproject.networking.Client;
 import com.example.personalproject.networking.MemoryCache;
 import com.example.personalproject.networking.ParseXmlMic;
+import com.example.personalproject.utilitys.ActivityConstants;
 import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class FuelPriceActivity extends Activity {
+    private static final String TAG = "TAG_EXCEPTION";
+
     // List view to content XML layout
-    private ListView listView;
+    private ListView mListView;
 
     // Hold XML Parse
     private RssFeedMic mData;
 
     // TextView that hold the title to show
-    private TextView mTitle, mSubTitle;
-
+    private TextView mTitle;
 
     // Custom Adapter to show the row
-    CustomFuelArrayAdapter mAdapter;
+    private CustomFuelArrayAdapter mAdapter;
 
-    private static final String TAG = "TAG_EXCEPTION";
+    // Reference the header view
+    private LinearLayout mHeaderView;
+
+    // String to hold the hearView message
+    private TextView mMessageHeader;
 
     // List with all parse.
     private ArrayList<Combustible> CustomListViewValuesArr;
@@ -64,22 +68,19 @@ public class FuelPriceActivity extends Activity {
      */
 
     private void initializerVariables() {
-        listView = (ListView) findViewById(R.id.list_combustible);
+        mListView = (ListView) findViewById(R.id.list_combustible);
 
-        mTitle = (TextView) findViewById(R.id.txtv_title);
+        mTitle = (TextView) findViewById(R.id.text_view_title);
         mTitle.setVisibility(View.INVISIBLE);
-
-        mSubTitle = (TextView) findViewById(R.id.txtv_sub_title);
-        mSubTitle.setVisibility(View.INVISIBLE);
-
-
     }
 
     private void setListViewCustomAdapter() {
         CustomListViewValuesArr = (ArrayList<Combustible>) mData
                 .getCombustibles();
 
+        //
         setTitle(mData.getTitle());
+
 
         // Create Custom Adapter
         mAdapter = new CustomFuelArrayAdapter(this, CustomListViewValuesArr);
@@ -90,12 +91,16 @@ public class FuelPriceActivity extends Activity {
 
         //Animation the list view wrapping the adapter.
         AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(mAdapter);
-        animationAdapter.setAbsListView(listView);
-        listView.setAdapter(animationAdapter);
-
-
+        animationAdapter.setAbsListView(mListView);
+        mListView.setAdapter(animationAdapter);
 
     }
+
+    /***
+     * set the title
+     *
+     * @param text String with the title to show
+     */
 
     private void setTitle(String text) {
         if (text.contains(":")) {
@@ -103,19 +108,39 @@ public class FuelPriceActivity extends Activity {
 
             //Set the title
             mTitle.setText(splitTitle[0]);
-            mSubTitle.setText(splitTitle[1]);
+
+            //set list header row
+            setListHeaderRow(splitTitle[1]);
         }
 
+        //Set visibility
         mTitle.setVisibility(View.VISIBLE);
-        mSubTitle.setVisibility(View.VISIBLE);
     }
 
+    public void setListHeaderRow(String textInformation) {
+        if (mListView.getHeaderViewsCount() == 0) {
+
+            mHeaderView = (LinearLayout) getLayoutInflater().inflate(
+                    R.layout.list_view_information_date_header_view, mListView, false);
+
+            mMessageHeader = (TextView) mHeaderView.findViewById(R.id.text_header);
+            mMessageHeader.setText(textInformation);
+
+            //set header view on ListView
+            mListView.setTag(ActivityConstants.HEADER_VIEW);
+
+            mListView.addHeaderView(mHeaderView, null, false);
+        }
+    }
+
+
     /**
-     * @param mPosition
+     * This function used by adapter
+     *
+     * @param mPosition position row id.
      */
 
     //TODO: check this
-    // This function used by adapter
     public void onItemClick(int mPosition) {
         Combustible tempValues = CustomListViewValuesArr
                 .get(mPosition);

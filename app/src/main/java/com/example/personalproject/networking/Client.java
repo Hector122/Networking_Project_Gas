@@ -1,20 +1,17 @@
 package com.example.personalproject.networking;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.provider.Settings;
-import android.util.Log;
 
 //TODO:Implement okHttp , or retrofit.
 public class Client {
@@ -85,8 +82,8 @@ public class Client {
     /***
      * Convert InputStream to String in format the xml encode &gt, &lt
      *
-     * @param inputStream
-     * @return
+     * @param inputStream InputStream receive form the request.
+     * @return String XML.
      * @throws IOException
      */
 
@@ -111,7 +108,7 @@ public class Client {
     /**
      * Check is the user have a active internet connectivity.
      *
-     * @param context
+     * @param context Activity context
      * @return true is have internet connection.
      */
 

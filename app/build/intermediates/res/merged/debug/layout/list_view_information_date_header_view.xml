@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ListViewHeaderViewContainer" >
+
+    <TextView
+        android:id="@+id/text_header"
+        style="@style/ListViewHeaderView"
+        android:fontFamily="sans-serif-dark" />
+
+</LinearLayout><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/list_view_information_date_header_view.xml -->

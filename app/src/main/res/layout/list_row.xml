@@ -12,7 +12,7 @@
     android:paddingTop="20dp"
     android:paddingBottom="20dp">
 
-    <!-- ListRow Left sied image arrow -->
+    <!-- ListRow Left sid image arrow -->
 
     <LinearLayout
         android:id="@+id/thumbnail"

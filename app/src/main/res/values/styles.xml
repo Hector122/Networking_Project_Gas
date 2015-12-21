@@ -17,4 +17,22 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+
+    <!-- ListView header view container -->
+    <style name="ListViewHeaderViewContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/light_gray</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="ListViewHeaderView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textColor">@color/title_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/list_view_header_view_text_size</item>
+    </style>
+
 </resources>

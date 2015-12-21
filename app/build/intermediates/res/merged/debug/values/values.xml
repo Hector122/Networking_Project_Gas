@@ -205,6 +205,7 @@
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
+    <dimen name="list_view_header_view_text_size">14sp</dimen>
     <dimen name="nav_drawer_width">260dp</dimen>
     <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
@@ -1035,6 +1036,22 @@
     </style>
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
+    </style>
+    <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="ListViewHeaderView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textColor">@color/title_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/list_view_header_view_text_size</item>
+    </style>
+    <style name="ListViewHeaderViewContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/light_gray</item>
+        <item name="android:orientation">vertical</item>
     </style>
     <!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
