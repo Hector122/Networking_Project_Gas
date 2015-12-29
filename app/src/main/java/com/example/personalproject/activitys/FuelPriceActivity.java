@@ -3,10 +3,11 @@ package com.example.personalproject.activitys;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +20,6 @@ import com.example.personalproject.networking.Client;
 import com.example.personalproject.networking.MemoryCache;
 import com.example.personalproject.networking.ParseXmlMic;
 import com.example.personalproject.utilitys.ActivityConstants;
-import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -30,7 +30,8 @@ public class FuelPriceActivity extends Activity {
     private static final String TAG = "TAG_EXCEPTION";
 
     // List view to content XML layout
-    private ListView mListView;
+    //private ListView mListView;
+    private RecyclerView mRecycleView;
 
     // Hold XML Parse
     private RssFeedMic mData;
@@ -52,7 +53,7 @@ public class FuelPriceActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_main_activity);
+        setContentView(R.layout.recycle_view_activity);
 
         initializerVariables();
         getRssMicAsyncTask();
@@ -68,7 +69,15 @@ public class FuelPriceActivity extends Activity {
      */
 
     private void initializerVariables() {
-        mListView = (ListView) findViewById(R.id.list_combustible);
+        // mListView = (ListView) findViewById(R.id.list_combustible);
+
+        mRecycleView = (RecyclerView) findViewById(R.id.recycler_view_list);
+        mRecycleView.setHasFixedSize(true);
+
+        //Set the layout manger
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRecycleView.setLayoutManager(layoutManager);
 
         mTitle = (TextView) findViewById(R.id.text_view_title);
         mTitle.setVisibility(View.INVISIBLE);
@@ -78,21 +87,19 @@ public class FuelPriceActivity extends Activity {
         CustomListViewValuesArr = (ArrayList<Combustible>) mData
                 .getCombustibles();
 
-        //
         setTitle(mData.getTitle());
-
 
         // Create Custom Adapter
         mAdapter = new CustomFuelArrayAdapter(this, CustomListViewValuesArr);
-
+        mRecycleView.setAdapter(mAdapter);
 
         //Old
         //listView.setAdapter(mAdapter);
 
         //Animation the list view wrapping the adapter.
-        AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(mAdapter);
-        animationAdapter.setAbsListView(mListView);
-        mListView.setAdapter(animationAdapter);
+//        AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(mAdapter);
+//        animationAdapter.setAbsListView(mListView);
+//        mListView.setAdapter(animationAdapter);
 
     }
 
@@ -107,31 +114,31 @@ public class FuelPriceActivity extends Activity {
             String[] splitTitle = text.split(":");
 
             //Set the title
-            mTitle.setText(splitTitle[0]);
+            mTitle.setText(splitTitle[1]);
 
             //set list header row
-            setListHeaderRow(splitTitle[1]);
+            // setListHeaderRow(splitTitle[1]);
         }
 
         //Set visibility
         mTitle.setVisibility(View.VISIBLE);
     }
 
-    public void setListHeaderRow(String textInformation) {
-        if (mListView.getHeaderViewsCount() == 0) {
-
-            mHeaderView = (LinearLayout) getLayoutInflater().inflate(
-                    R.layout.list_view_information_date_header_view, mListView, false);
-
-            mMessageHeader = (TextView) mHeaderView.findViewById(R.id.text_header);
-            mMessageHeader.setText(textInformation);
-
-            //set header view on ListView
-            mListView.setTag(ActivityConstants.HEADER_VIEW);
-
-            mListView.addHeaderView(mHeaderView, null, false);
-        }
-    }
+//    public void setListHeaderRow(String textInformation) {
+//        if (mListView.getHeaderViewsCount() == 0) {
+//
+//            mHeaderView = (LinearLayout) getLayoutInflater().inflate(
+//                    R.layout.list_view_information_date_header_view, mListView, false);
+//
+//            mMessageHeader = (TextView) mHeaderView.findViewById(R.id.text_header);
+//            mMessageHeader.setText(textInformation);
+//
+//            //set header view on ListView
+//            mListView.setTag(ActivityConstants.HEADER_VIEW);
+//
+//            mListView.addHeaderView(mHeaderView, null, false);
+//        }
+//    }
 
 
     /**
@@ -169,27 +176,32 @@ public class FuelPriceActivity extends Activity {
      */
 
     private class DownloadRSS extends AsyncTask<Void, Void, String> {
-        MemoryCache cache = MemoryCache.getInstance();
+        MemoryCache cache;
 
         ProgressBar spinner;
 
         @Override
         protected void onPreExecute() {
             spinner = (ProgressBar) findViewById(R.id.progress_bar);
+            cache = MemoryCache.getInstance();
         }
 
         @Override
         protected String doInBackground(Void... params) {
             Client client = new Client();
+            String result = null;
 
-            // cache the data receiver is not exist.
-            if (cache
-                    .checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
-                return cache
-                        .getValueFromCache(ActivityConstants.EXTRA_XML_MIC_CACHE);
-            } else {
-                return client.getRSS(getResources().getString(R.string.url));
+            if(! isCancelled()){
+                // cache the data receiver is not exist.
+                if (cache
+                        .checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
+                    return cache
+                            .getValueFromCache(ActivityConstants.EXTRA_XML_MIC_CACHE);
+                } else {
+                    return client.getRSS(getResources().getString(R.string.url));
+                }
             }
+            return result;
         }
 
         @Override

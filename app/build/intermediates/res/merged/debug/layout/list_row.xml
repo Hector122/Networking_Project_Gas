@@ -1,92 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_item"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/windowBackground"
-    android:orientation="horizontal"
-    android:padding="10dip"
-    android:clickable="true"
-    android:clipToPadding="false"
-    android:elevation="30dp"
-    android:layout_marginBottom="20dp"
-    android:paddingTop="20dp"
-    android:paddingBottom="20dp">
+    android:layout_margin="5dp"
+    android:elevation="5dp">
 
-    <!-- ListRow Left sied image arrow -->
 
-    <LinearLayout
-        android:id="@+id/thumbnail"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginLeft="3dp"
-        android:background="@drawable/ic_action_collapse"
-        android:padding="3dip" >
+        android:background="@color/windowBackground"
+        android:clickable="true"
+        android:clipToPadding="false"
+        android:elevation="15dp"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
 
-        <ImageView
-            android:id="@+id/list_image"
-            android:layout_width="70dip"
-            android:layout_height="70dip"
-            android:layout_marginBottom="2dip"
+        <!-- ListRow Left sid image arrow -->
+
+        <LinearLayout
+            android:id="@+id/thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/ic_action_collapse"
+            android:padding="3dip">
+
+
+            <ImageView
+                android:id="@+id/list_image"
+                android:layout_width="70dip"
+                android:layout_height="70dip"
+                android:layout_marginBottom="2dip"
+                android:layout_marginTop="2dip"
+                android:contentDescription="@string/desc"
+                android:src="@drawable/arrow_ecuals_yellow" />
+
+        </LinearLayout>
+
+        <!-- Title Of the row -->
+
+        <TextView
+            android:id="@+id/description_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/thumbnail"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/thumbnail"
+            android:gravity="center_horizontal"
+            android:text="@string/text_title"
+            android:textColor="#040404"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+        <!-- Defence with the last price -->
+
+        <TextView
+            android:id="@+id/difference_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/description_title"
             android:layout_marginTop="2dip"
-            android:contentDescription="@string/desc"
-            android:src="@drawable/arrow_ecuals_yellow" />
+            android:layout_toEndOf="@+id/thumbnail"
+            android:layout_toRightOf="@+id/thumbnail"
+            android:text="@string/difference_text"
+            android:textColor="#343434"
+            android:textSize="14sp" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/difference_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/description_title"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="4dip"
+            android:layout_toRightOf="@id/difference_price_text"
+            android:text="RD$195"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
 
-    <!-- Title Of the row -->
+        <!-- Current Price -->
 
-    <TextView
-        android:id="@+id/description_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/thumbnail"
-        android:layout_marginBottom="2dp"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/thumbnail"
-        android:gravity="center_horizontal"
-        android:text="@string/text_title"
-        android:textColor="#040404"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:typeface="sans" />
+        <TextView
+            android:id="@+id/curren_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/sample_price"
+            android:textSize="25sp" />
 
-    <!-- Defence with the last price -->
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/difference_price_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/description_title"
-        android:layout_marginTop="2dip"
-        android:layout_toEndOf="@+id/thumbnail"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:text="@string/difference_text"
-        android:textColor="#343434"
-        android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/difference_price_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/description_title"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="4dip"
-        android:layout_toRightOf="@id/difference_price_text"
-        android:text="RD$195"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <!-- Current Price -->
-
-    <TextView
-        android:id="@+id/curren_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:text="@string/sample_price"
-        android:textSize="25sp" />
-
-</RelativeLayout><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/list_row.xml -->
+</android.support.v7.widget.CardView><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/list_row.xml -->

@@ -1,105 +1,70 @@
 package com.example.personalproject.adapters;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff.Mode;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.personalproject.activitys.FuelPriceActivity;
 import com.example.personalproject.R;
+import com.example.personalproject.activitys.FuelPriceActivity;
 import com.example.personalproject.combustible.Combustible;
-import com.example.personalproject.combustible.RssFeedMic;
 
-public class CustomFuelArrayAdapter extends BaseAdapter {
+import java.util.ArrayList;
+
+public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArrayAdapter.CombustibleViewHolder> {
     // Activity context
-    private final Activity context;
+    private final Activity mContext;
 
-    private static LayoutInflater inflater = null;
+    private static LayoutInflater mInflater = null;
 
-    RssFeedMic tempValues = null;
+    //RssFeedMic mTempValues = null;
 
     // List of items that are shown in the assistance list view.
-    private final ArrayList<Combustible> adapterList;
+    private final ArrayList<Combustible> mAdapterList;
 
     public CustomFuelArrayAdapter(Activity context,
-                                  ArrayList<Combustible> adapterList) {
-        this.context = context;
-        this.adapterList = adapterList;
+                                  ArrayList<Combustible> mAdapterList) {
+        this.mContext = context;
+        this.mAdapterList = mAdapterList;
 
-        inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        mInflater = (LayoutInflater) context
+//                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+    }
+
+
+    @Override
+    public void onBindViewHolder(CombustibleViewHolder holder, int position) {
+        Combustible combustible = mAdapterList.get(position);
+
+        holder.description.setText(combustible.getDescription());
+        holder.price.setText(setNumberFormatToShow(combustible.getPrice()));
+        holder.differencePrice.setText(setNumberFormatToShow(combustible.getLastPrice()));
+        holder.image.setImageResource(getCorrespondingImage(combustible));
+
+    }
+
+
+    @Override
+    public CombustibleViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_row, viewGroup, false);
+        CombustibleViewHolder viewHolder = new CombustibleViewHolder(view);
+        return viewHolder;
     }
 
     @Override
-    public int getCount() {
-        return adapterList.size();
+    public int getItemCount() {
+        return mAdapterList.size();
     }
 
-    @Override
-    public Object getItem(int position) {
-        return adapterList.get(position);
-    }
 
     @Override
     public long getItemId(int position) {
         return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View view = convertView;
-        ViewHolder holder;
-
-        if (convertView == null) {
-            // inflate list_row file for each row
-            view = inflater.inflate(R.layout.list_row, null);
-
-            // View Holder item to content
-            holder = new ViewHolder();
-            holder.image = (ImageView) view.findViewById(R.id.list_image);
-            holder.price = (TextView) view.findViewById(R.id.curren_price);
-            holder.description = (TextView) view
-                    .findViewById(R.id.description_title);
-            holder.differencePrice = (TextView) view
-                    .findViewById(R.id.difference_price_value);
-
-            // set the holder with LayoutInflater
-            view.setTag(holder);
-
-        } else {
-            holder = (ViewHolder) view.getTag();
-        }
-
-        // Set Model values in Holder elements
-        Combustible combustible = adapterList.get(position);
-
-        holder.price.setText(setNumberFormatToShow(combustible.getPrice()));
-        holder.differencePrice.setText(setNumberFormatToShow(combustible.getLastPrice() - combustible.getPrice()));
-        holder.description.setText(combustible.getDescription());
-        holder.image.setImageResource(getCorrespondingImage(combustible));
-
-        // set item click listener
-
-        view.setOnClickListener(new OnItemClickListener(position));
-
-        return view;
     }
 
 
@@ -125,20 +90,16 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
             }
 
         } else {
-
             numberFormatted = number + ".00";
         }
 
         return moneySymbol + numberFormatted;
     }
 
-    // private
-    // byte[] decodedString =
-    // Base64.decode(person_object.getPhoto(),Base64.NO_WRAP);
-    // InputStream inputStream = new ByteArrayInputStream(decodedString);
-    // Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-    // user_image.setImageBitmap(bitmap);
-
+    /**
+     * @param combustible
+     * @return
+     */
     private int getCorrespondingImage(Combustible combustible) {
         int imageById = 0;
 
@@ -170,15 +131,25 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
     /*********
      * Create a holder Class to contain inflated xml file elements
      *********/
-    public static class ViewHolder {
+    public static class CombustibleViewHolder extends RecyclerView.ViewHolder {
+        protected TextView price;
+        protected TextView differencePrice;
+        protected TextView description;
+        protected ImageView image;
 
-        public TextView price;
-        public TextView differencePrice;
-        public TextView description;
-        public ImageView image;
+        CombustibleViewHolder(View view) {
+            super(view);
 
+            image = (ImageView) view.findViewById(R.id.list_image);
+            price = (TextView) view.findViewById(R.id.curren_price);
+            description = (TextView) view.findViewById(R.id.description_title);
+            differencePrice = (TextView) view.findViewById(R.id.difference_price_value);
+        }
     }
 
+    /**
+     *
+     */
     private class OnItemClickListener implements OnClickListener {
         int position;
 
@@ -190,7 +161,7 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
         public void onClick(View v) {
             // TODO Auto-generated method stub
 
-            FuelPriceActivity fuelPrice = (FuelPriceActivity) context;
+            FuelPriceActivity fuelPrice = (FuelPriceActivity) mContext;
 
             /****
              * Call onItemClick Method inside CustomListViewAndroidExample Class
@@ -200,7 +171,6 @@ public class CustomFuelArrayAdapter extends BaseAdapter {
             fuelPrice.onItemClick(position);
 
         }
-
     }
 
 }
