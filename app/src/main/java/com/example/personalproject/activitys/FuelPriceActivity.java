@@ -18,7 +18,7 @@ import com.example.personalproject.combustible.Combustible;
 import com.example.personalproject.combustible.RssFeedMic;
 import com.example.personalproject.networking.Client;
 import com.example.personalproject.networking.MemoryCache;
-import com.example.personalproject.networking.ParseXmlMic;
+import com.example.personalproject.networking.ParserXmlMic;
 import com.example.personalproject.utilitys.ActivityConstants;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -177,7 +177,6 @@ public class FuelPriceActivity extends Activity {
 
     private class DownloadRSS extends AsyncTask<Void, Void, String> {
         MemoryCache cache;
-
         ProgressBar spinner;
 
         @Override
@@ -206,7 +205,7 @@ public class FuelPriceActivity extends Activity {
 
         @Override
         protected void onPostExecute(String result) {
-            ParseXmlMic parser = new ParseXmlMic();
+            ParserXmlMic parser = new ParserXmlMic();
 
             spinner.setVisibility(View.GONE);
 

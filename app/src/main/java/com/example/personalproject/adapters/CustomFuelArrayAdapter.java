@@ -19,10 +19,6 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
     // Activity context
     private final Activity mContext;
 
-    private static LayoutInflater mInflater = null;
-
-    //RssFeedMic mTempValues = null;
-
     // List of items that are shown in the assistance list view.
     private final ArrayList<Combustible> mAdapterList;
 
@@ -30,10 +26,6 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
                                   ArrayList<Combustible> mAdapterList) {
         this.mContext = context;
         this.mAdapterList = mAdapterList;
-
-//        mInflater = (LayoutInflater) context
-//                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
     }
 
 
@@ -59,12 +51,6 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
     @Override
     public int getItemCount() {
         return mAdapterList.size();
-    }
-
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
     }
 
 
