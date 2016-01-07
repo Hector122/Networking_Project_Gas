@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc83d488-10e3-4e2b-8e9a-f0764e1f5d92" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/personalproject/activitys/FuelPriceActivity$MyOnRefreshListeners.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/personalproject/activitys/FuelPriceActivity$DownloadRSS.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/personalproject/activitys/FuelPriceActivity$DownloadRss.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/personalproject/activitys/FuelPriceActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/personalproject/activitys/FuelPriceActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/personalproject/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/personalproject/R$id.class" />
