@@ -23,6 +23,10 @@
     <string name="glp">Gas Licuado de Petróleo (GLP) </string>
     <string name="gnv">Gas Natural Vehicular (GNV) </string>
 
+
+    <!-- messages -->
+    <string name="not_internet_connection"> No tienes conexion a internet. </string>
+
     <!-- URLs -->
     <string name="url">http://www.seic.gov.do/rss/combustibles.aspx</string>
 

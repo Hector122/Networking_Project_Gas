@@ -3,6 +3,7 @@ package com.example.personalproject.activitys;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -51,6 +52,13 @@ public class FuelPriceActivity extends Activity {
     // List with all parse.
     private ArrayList<Combustible> CustomListViewValuesArr;
 
+    // Swipe to Refreshing Layout
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+
+
+    private DownloadRss downloadRss;
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycle_view_activity);
@@ -60,8 +68,22 @@ public class FuelPriceActivity extends Activity {
 
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //Listener for the refresh view.
+        mSwipeRefreshLayout.setOnRefreshListener(new MyOnRefreshListeners());
+    }
+
     private void getRssMicAsyncTask() {
-        new DownloadRSS().execute();
+        if (new Client().isConnected(this)) {
+            downloadRss = new DownloadRss();
+            downloadRss.execute();
+        } else {
+            Toast.makeText(this, R.string.not_internet_connection, Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
@@ -81,6 +103,12 @@ public class FuelPriceActivity extends Activity {
 
         mTitle = (TextView) findViewById(R.id.text_view_title);
         mTitle.setVisibility(View.INVISIBLE);
+
+
+       // downloadRss = new DownloadRss();
+
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+        //TODO set color maybe.
     }
 
     private void setListViewCustomAdapter() {
@@ -171,11 +199,24 @@ public class FuelPriceActivity extends Activity {
         cache.putValueInCache(ActivityConstants.EXTRA_XML_MIC_CACHE, data);
     }
 
+
+    private class MyOnRefreshListeners implements SwipeRefreshLayout.OnRefreshListener {
+
+        @Override
+        public void onRefresh() {
+            if (downloadRss.getStatus() != AsyncTask.Status.RUNNING) {
+                getRssMicAsyncTask();
+
+            }
+            mSwipeRefreshLayout.setRefreshing(false);
+        }
+    }
+
     /**
      * AsyncTask that get the XML and parse the XML form MIC
      */
 
-    private class DownloadRSS extends AsyncTask<Void, Void, String> {
+    private class DownloadRss extends AsyncTask<Void, Void, String> {
         MemoryCache cache;
         ProgressBar spinner;
 
@@ -190,7 +231,7 @@ public class FuelPriceActivity extends Activity {
             Client client = new Client();
             String result = null;
 
-            if(! isCancelled()){
+            if (!isCancelled()) {
                 // cache the data receiver is not exist.
                 if (cache
                         .checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
@@ -211,7 +252,7 @@ public class FuelPriceActivity extends Activity {
 
             try {
                 // TODO:Not cache for know
-                // setXmlInMemoryCache(result);
+                //setXmlInMemoryCache(result);
 
                 mData = parser.readEntry(result);
 

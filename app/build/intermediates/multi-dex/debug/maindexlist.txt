@@ -2,8 +2,8 @@
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 android/support/annotation/AnimRes.class
 android/support/annotation/RawRes.class
-android/support/v7/widget/ActionMenuView$LayoutParams.class
 android/support/v4/widget/SwipeRefreshLayout.class
+android/support/v7/widget/ActionMenuView$LayoutParams.class
 android/support/v7/app/ActionBar$LayoutParams.class
 android/support/annotation/StringDef.class
 android/support/annotation/LayoutRes.class
@@ -15,10 +15,11 @@ android/support/annotation/StyleableRes.class
 android/support/annotation/ColorRes.class
 android/support/v4/widget/MaterialProgressDrawable$2.class
 -keep public class * extends java.lang.annotation.Annotation {
-android/support/annotation/AnyRes.class
 android/support/annotation/DimenRes.class
+android/support/annotation/AnyRes.class
 android/support/v7/widget/RecyclerView$Adapter.class
 android/support/annotation/InterpolatorRes.class
+android/support/v4/widget/SwipeRefreshLayout$OnRefreshListener.class
 android/support/v7/internal/view/menu/MenuItemImpl.class
 android/support/v4/widget/MaterialProgressDrawable$Ring.class
 android/support/annotation/IntegerRes.class
@@ -37,7 +38,6 @@ android/support/annotation/IntDef.class
 android/support/v4/view/ViewCompat$ResolvedLayoutDirectionMode.class
 android/support/v4/app/FragmentTransaction$Transit.class
 -keep public class * extends android.app.backup.BackupAgent {
-com/example/personalproject/activitys/FuelPriceActivity$DownloadRSS.class
 com/example/personalproject/networking/MemoryCache.class
 android/support/v7/app/ActionBar$TabListener.class
 android/support/v4/widget/MaterialProgressDrawable$ProgressDrawableSize.class
@@ -56,6 +56,7 @@ com/example/personalproject/combustible/Combustible.class
 android/support/v4/widget/SimpleCursorAdapter.class
 android/support/annotation/AttrRes.class
 android/support/v7/widget/RecyclerView$LayoutManager.class
+com/example/personalproject/activitys/FuelPriceActivity$DownloadRss.class
 com/nhaarman/listviewanimations/itemmanipulation/animateaddition/AnimateAdditionAdapter.class
 android/support/annotation/StyleRes.class
 android/support/v7/app/ActionBar$NavigationMode.class
@@ -64,9 +65,9 @@ com/example/personalproject/combustible/RssFeedMic.class
 android/support/v4/widget/MaterialProgressDrawable.class
     *;
 android/support/v7/widget/RecyclerView$ItemDecoration.class
-android/support/annotation/ArrayRes.class
 android/support/v7/app/ActionBar$Tab.class
 android/support/v7/internal/widget/TintTypedArray.class
+android/support/annotation/ArrayRes.class
 android/support/v7/widget/RecyclerView.class
 android/support/annotation/PluralsRes.class
 -keep class com.example.personalproject.activitys.DashboardActivity { <init>(); }
@@ -79,8 +80,8 @@ android/support/annotation/NonNull.class
 -keep class com.example.personalproject.activitys.FuelPriceActivity { <init>(); }
 android/support/v4/view/ViewCompat.class
 android/support/v4/widget/ResourceCursorAdapter.class
-android/support/annotation/Nullable.class
 com/example/personalproject/activitys/DashboardActivity$1.class
+android/support/annotation/Nullable.class
 android/support/v7/app/ActionBar$Callback.class
 android/support/v4/app/FragmentTabHost.class
 android/support/v7/widget/LinearLayoutCompat$LayoutParams.class
@@ -91,9 +92,11 @@ android/support/v4/view/ViewCompat$OverScroll.class
 android/support/v7/view/ActionMode.class
 android/support/v4/widget/MaterialProgressDrawable$EndCurveInterpolator.class
 android/support/v7/app/ActionBar$DisplayOptions.class
+com/example/personalproject/activitys/FuelPriceActivity$MyOnRefreshListeners.class
 android/support/v4/app/ActionBarDrawerToggle.class
     void attachBaseContext(android.content.Context);
 android/support/v4/view/ViewCompat$LayoutDirectionMode.class
+com/example/personalproject/networking/Client.class
 com/example/personalproject/adapters/CustomFuelArrayAdapter.class
 android/support/v4/app/DialogFragment$DialogStyle.class
 android/support/annotation/BoolRes.class

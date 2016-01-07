@@ -1471,7 +1471,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0b002e;
         public static final int action_mode_bar_stub=0x7f0b002d;
         public static final int action_mode_close_button=0x7f0b0020;
-        public static final int action_settings=0x7f0b005c;
+        public static final int action_settings=0x7f0b005d;
         public static final int activity_chooser_view_content=0x7f0b0021;
         public static final int always=0x7f0b0016;
         public static final int beginning=0x7f0b0013;
@@ -1494,19 +1494,19 @@ containing a value of this type.
         public static final int end=0x7f0b0014;
         public static final int expand_activities_button=0x7f0b0022;
         public static final int expanded_menu=0x7f0b0028;
-        public static final int firs_row=0x7f0b0054;
+        public static final int firs_row=0x7f0b0055;
         public static final int header_container=0x7f0b0050;
         public static final int home=0x7f0b0004;
         public static final int homeAsUp=0x7f0b000d;
         public static final int icon=0x7f0b0026;
         public static final int ifRoom=0x7f0b0018;
         public static final int image=0x7f0b0023;
-        public static final int imageView1=0x7f0b0055;
-        public static final int imageView2=0x7f0b0056;
-        public static final int imageView3=0x7f0b0057;
-        public static final int imageView4=0x7f0b0059;
-        public static final int imageView5=0x7f0b005a;
-        public static final int imageView6=0x7f0b005b;
+        public static final int imageView1=0x7f0b0056;
+        public static final int imageView2=0x7f0b0057;
+        public static final int imageView3=0x7f0b0058;
+        public static final int imageView4=0x7f0b005a;
+        public static final int imageView5=0x7f0b005b;
+        public static final int imageView6=0x7f0b005c;
         public static final int linear_one=0x7f0b003f;
         public static final int linerar_two=0x7f0b0042;
         public static final int listMode=0x7f0b0009;
@@ -1520,7 +1520,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f0b0005;
         public static final int progress_horizontal=0x7f0b0006;
         public static final int radio=0x7f0b002b;
-        public static final int recycler_view_list=0x7f0b0053;
+        public static final int recycler_view_list=0x7f0b0054;
         public static final int search_badge=0x7f0b0035;
         public static final int search_bar=0x7f0b0034;
         public static final int search_button=0x7f0b0036;
@@ -1531,13 +1531,14 @@ containing a value of this type.
         public static final int search_plate=0x7f0b0039;
         public static final int search_src_text=0x7f0b003a;
         public static final int search_voice_btn=0x7f0b003e;
-        public static final int second_row=0x7f0b0058;
+        public static final int second_row=0x7f0b0059;
         public static final int shortcut=0x7f0b002a;
         public static final int showCustom=0x7f0b000f;
         public static final int showHome=0x7f0b0010;
         public static final int showTitle=0x7f0b0011;
         public static final int split_action_bar=0x7f0b0007;
         public static final int submit_area=0x7f0b003c;
+        public static final int swipe_refresh_layout=0x7f0b0053;
         public static final int tabMode=0x7f0b000b;
         public static final int text_header=0x7f0b004e;
         public static final int text_view_title=0x7f0b0052;
@@ -1620,12 +1621,13 @@ containing a value of this type.
         public static final int glp=0x7f050019;
         public static final int gnv=0x7f05001a;
         public static final int kerosene=0x7f05001b;
-        public static final int rd_price_simbol=0x7f05001c;
-        public static final int sample_price=0x7f05001d;
-        public static final int text_title=0x7f05001e;
-        public static final int title=0x7f05001f;
-        public static final int title_row=0x7f050020;
-        public static final int url=0x7f050021;
+        public static final int not_internet_connection=0x7f05001c;
+        public static final int rd_price_simbol=0x7f05001d;
+        public static final int sample_price=0x7f05001e;
+        public static final int text_title=0x7f05001f;
+        public static final int title=0x7f050020;
+        public static final int title_row=0x7f050021;
+        public static final int url=0x7f050022;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

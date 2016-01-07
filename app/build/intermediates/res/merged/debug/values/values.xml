@@ -249,6 +249,7 @@
     <string name="glp">Gas Licuado de Petróleo (GLP) </string>
     <string name="gnv">Gas Natural Vehicular (GNV) </string>
     <string name="kerosene">Kerosene </string>
+    <string name="not_internet_connection"> No tienes conexion a internet. </string>
     <string name="rd_price_simbol">RD$ </string>
     <string name="sample_price">RD$266.90</string>
     <string name="text_title"> Lorem Ipsum </string>
