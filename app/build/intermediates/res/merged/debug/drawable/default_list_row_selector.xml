@@ -10,4 +10,4 @@
             <solid android:color="@color/black" />
         </shape>
     </item>
-</selector><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/drawable/default_list_row_selector.xml -->
+</selector>

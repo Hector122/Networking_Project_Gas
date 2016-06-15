@@ -10,36 +10,39 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
-    <LinearLayout
-        android:id="@+id/header_container"
-        android:layout_width="fill_parent"
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:id="@+id/app_bar_layout"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+
+
+
+        <!--<android.support.design.widget.TabLayout-->
+            <!--android:id="@+id/tabs"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+    <!--</android.support.design.widget.AppBarLayout>-->
+
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical">
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/toolbar"
+        android:text="@string/text_title"
+        android:textSize="20sp" />
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
-
-        <TextView
-            android:id="@+id/text_view_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:layout_marginLeft="5dip"
-            android:layout_marginRight="5dip"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:text="@string/text_title"
-            android:textSize="20sp" />
-
-    </LinearLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/header_container">
+        android:layout_below="@id/text_view_title">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_list"
@@ -48,4 +51,8 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
-</RelativeLayout><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/recycle_view_activity.xml -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+</RelativeLayout>

@@ -37,7 +37,6 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
         holder.price.setText(setNumberFormatToShow(combustible.getPrice()));
         holder.differencePrice.setText(setNumberFormatToShow(combustible.getLastPrice()));
         holder.image.setImageResource(getCorrespondingImage(combustible));
-
     }
 
 
@@ -52,7 +51,6 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
     public int getItemCount() {
         return mAdapterList.size();
     }
-
 
     //TODO: check this.
     private static String setNumberFormatToShow(double money) {
@@ -158,5 +156,4 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
 
         }
     }
-
 }

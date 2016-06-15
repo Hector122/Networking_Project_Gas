@@ -13,11 +13,11 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class ParserXmlMic {
-    private static final String NAMESPACE = "rssversion";
+    //TODO:  remove
+    //private static final String NAMESPACE = "rssversion";
 
 
     private static final String ITEM = "item"; /* parent node */
@@ -27,14 +27,14 @@ public class ParserXmlMic {
 
 
     //TODO: this block now is never used
-    private static final String GASOLINE_P = "gas95";
-    private static final String GASOLINE_R = "gas89";
-    private static final String DIESEL_P = "gasoilp";
-    private static final String DIESEL_R = "gasoilr";
-    private static final String KEROSENE = "kerosene";
-    private static final String GLP = "glp";
-    private static final String GNV = "gnv";
-    private static final String NS = null;
+//    private static final String GASOLINE_P = "gas95";
+//    private static final String GASOLINE_R = "gas89";
+//    private static final String DIESEL_P = "gasoilp";
+//    private static final String DIESEL_R = "gasoilr";
+//    private static final String KEROSENE = "kerosene";
+//    private static final String GLP = "glp";
+//    private static final String GNV = "gnv";
+//    private static final String NS = null;
 
 
     /***
@@ -88,7 +88,7 @@ public class ParserXmlMic {
         String title = "";
         String pubDate = "";
 
-        List<Combustible> combustibles = new ArrayList<Combustible>();
+        ArrayList<Combustible> combustibles = new ArrayList<>();
 
         RssFeedMic rssFeedItem = new RssFeedMic();
 
@@ -99,7 +99,6 @@ public class ParserXmlMic {
                 continue;
             }
 
-            //TODO: set Description for parse no raw data.
             String name = parser.getName();
             String text = null;
 
@@ -179,14 +178,14 @@ public class ParserXmlMic {
      * @throws IOException
      */
 
-    private List<Combustible> readDescriptionItem(String text) throws XmlPullParserException, IOException {
+    private ArrayList<Combustible> readDescriptionItem(String text) throws XmlPullParserException, IOException {
         XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
         factory.setNamespaceAware(true);
 
         XmlPullParser xpp = factory.newPullParser();
         xpp.setInput(new StringReader(text));
 
-        List<Combustible> combustiblesList = new ArrayList<Combustible>();
+        ArrayList<Combustible> combustiblesList = new ArrayList<>();
 
         String temp = "";
 

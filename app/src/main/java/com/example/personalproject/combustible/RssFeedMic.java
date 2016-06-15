@@ -1,14 +1,13 @@
 package com.example.personalproject.combustible;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RssFeedMic {
 	//private static final long serialVersionUID = 1L;
 
 	private String title, publicationDate;
 
-	private List<Combustible> combustibles = new ArrayList<Combustible>();
+	private ArrayList<Combustible> combustibles = new ArrayList<Combustible>();
 
 	public String getTitle() {
 		return title;
@@ -26,11 +25,11 @@ public class RssFeedMic {
 		this.publicationDate = publicationDate;
 	}
 
-	public List<Combustible> getCombustibles() {
+	public ArrayList<Combustible> getCombustibles() {
 		return combustibles;
 	}
 
-	public void setCombustibles(List<Combustible> combustibles) {
+	public void setCombustibles(ArrayList<Combustible> combustibles) {
 		this.combustibles = combustibles;
 	}
 

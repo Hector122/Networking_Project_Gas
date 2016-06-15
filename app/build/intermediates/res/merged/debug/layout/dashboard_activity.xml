@@ -84,4 +84,4 @@
         android:layout_marginLeft="180dp"
         android:text="@string/app_name" />
 
-</RelativeLayout><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/dashboard_activity.xml -->
+</RelativeLayout>

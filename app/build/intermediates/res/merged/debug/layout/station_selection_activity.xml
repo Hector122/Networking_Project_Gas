@@ -91,4 +91,4 @@
             android:src="@drawable/ic_launcher" />
     </LinearLayout>
 
-</RelativeLayout><!-- From: file:/Users/hector%20castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/station_selection_activity.xml -->
+</RelativeLayout>

@@ -1,10 +1,5 @@
 package com.example.personalproject.data;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -15,6 +10,11 @@ import com.example.personalproject.combustible.Combustible;
 import com.example.personalproject.combustible.RssFeedMic;
 import com.example.personalproject.data.FeedReaderContract.FeedDescription;
 import com.example.personalproject.data.FeedReaderContract.FeedEntryFuel;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CombustibleDataSource {
 	private SQLiteDatabase database;
@@ -106,7 +106,7 @@ public class CombustibleDataSource {
 	 */
 
 	public RssFeedMic getLastInformation(RssFeedMic mic) {
-		List<Combustible> currentCombustible = new ArrayList<Combustible>();
+		ArrayList<Combustible> currentCombustible = new ArrayList<Combustible>();
 
 		String countQuery = "SELECT " + FeedDescription.COLUMN_NAME_CODE + ","
 				+ FeedDescription.COLUMN_NAME_PRICE + " FROM "

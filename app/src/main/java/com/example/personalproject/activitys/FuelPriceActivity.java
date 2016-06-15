@@ -1,11 +1,12 @@
 package com.example.personalproject.activitys;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -27,7 +28,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class FuelPriceActivity extends Activity {
+public class FuelPriceActivity extends AppCompatActivity {
     private static final String TAG = "TAG_EXCEPTION";
 
     // List view to content XML layout
@@ -50,13 +51,16 @@ public class FuelPriceActivity extends Activity {
     private TextView mMessageHeader;
 
     // List with all parse.
-    private ArrayList<Combustible> CustomListViewValuesArr;
+    private ArrayList<Combustible> CustomListViewValues;
 
     // Swipe to Refreshing Layout
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
-
+    //Async task
     private DownloadRss downloadRss;
+
+    //
+    //private TabLayout tabs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +69,6 @@ public class FuelPriceActivity extends Activity {
 
         initializerVariables();
         getRssMicAsyncTask();
-
     }
 
 
@@ -83,6 +86,8 @@ public class FuelPriceActivity extends Activity {
             downloadRss.execute();
         } else {
             Toast.makeText(this, R.string.not_internet_connection, Toast.LENGTH_SHORT).show();
+
+            //TODO: imagen no tienes connection a internet more frendly
         }
     }
 
@@ -91,8 +96,6 @@ public class FuelPriceActivity extends Activity {
      */
 
     private void initializerVariables() {
-        // mListView = (ListView) findViewById(R.id.list_combustible);
-
         mRecycleView = (RecyclerView) findViewById(R.id.recycler_view_list);
         mRecycleView.setHasFixedSize(true);
 
@@ -101,24 +104,35 @@ public class FuelPriceActivity extends Activity {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecycleView.setLayoutManager(layoutManager);
 
+        //Reference to the header title.
         mTitle = (TextView) findViewById(R.id.text_view_title);
         mTitle.setVisibility(View.INVISIBLE);
 
-
-       // downloadRss = new DownloadRss();
+        //Initializer and set the toolbar.
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
-        //TODO set color maybe.
+
+        //TODO: set color maybe.
+
+
+//        tabs = (TabLayout) findViewById(R.id.tabs);
+//        tabs.addTab(tabs.newTab().setText("testing 1"));
+//        tabs.addTab(tabs.newTab().setText("testing 2"));
+//        tabs.addTab(tabs.newTab().setText("testing 3"));
+//
+//        tabs.setTabMode(TabLayout.MODE_SCROLLABLE);
+
     }
 
     private void setListViewCustomAdapter() {
-        CustomListViewValuesArr = (ArrayList<Combustible>) mData
-                .getCombustibles();
+        CustomListViewValues = mData.getCombustibles();
 
         setTitle(mData.getTitle());
 
         // Create Custom Adapter
-        mAdapter = new CustomFuelArrayAdapter(this, CustomListViewValuesArr);
+        mAdapter = new CustomFuelArrayAdapter(this, CustomListViewValues);
         mRecycleView.setAdapter(mAdapter);
 
         //Old
@@ -177,7 +191,7 @@ public class FuelPriceActivity extends Activity {
 
     //TODO: check this
     public void onItemClick(int mPosition) {
-        Combustible tempValues = CustomListViewValuesArr
+        Combustible tempValues = CustomListViewValues
                 .get(mPosition);
 
         // SHOW ALERT
@@ -251,7 +265,7 @@ public class FuelPriceActivity extends Activity {
             spinner.setVisibility(View.GONE);
 
             try {
-                // TODO:Not cache for know
+                // TODO:Not cache for know, cache the data for five  minutes.
                 //setXmlInMemoryCache(result);
 
                 mData = parser.readEntry(result);
