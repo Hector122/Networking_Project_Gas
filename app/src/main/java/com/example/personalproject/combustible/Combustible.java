@@ -2,8 +2,7 @@ package com.example.personalproject.combustible;
 
 import java.io.Serializable;
 
-public class Combustible implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Combustible {
 
     private double price;
     private double lastPrice;

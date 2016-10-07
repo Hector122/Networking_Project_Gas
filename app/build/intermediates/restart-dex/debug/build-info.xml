@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="23"
     density="xxxhdpi"
-    format="7"
-    timestamp="1465590306398630000"
-    token="434869108193575141" >
+    format="8"
+    plugin-version="2.2.0"
+    timestamp="280280905593408"
+    token="434869108193575141"
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1941" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="169" />
+        duration="0" />
     <task
         name="verifier"
-        duration="26" />
+        duration="0" />
 
     <artifact
-        location="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+        type="RESOURCES" />
 
-    <build timestamp="1465590306398630000" >
+    <build
+        timestamp="279950473463687"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="280280905593408"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

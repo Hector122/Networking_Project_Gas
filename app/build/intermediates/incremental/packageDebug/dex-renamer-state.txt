@@ -1,0 +1,7 @@
+#Fri Oct 07 17:23:23 AST 2016
+base.0=/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f6bb5e3f81bb2921ce63d5f827ec0fbce471da00
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b0668e9562adb05b1d3a9b457dd37e8767c65643/classes.dex
+base.1=/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b0668e9562adb05b1d3a9b457dd37e8767c65643
+file.0=/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f6bb5e3f81bb2921ce63d5f827ec0fbce471da00/classes.dex

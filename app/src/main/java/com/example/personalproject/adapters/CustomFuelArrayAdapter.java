@@ -18,9 +18,9 @@ import java.util.ArrayList;
 public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArrayAdapter.CombustibleViewHolder> {
     // Activity context
     private final Activity mContext;
-
     // List of items that are shown in the assistance list view.
     private final ArrayList<Combustible> mAdapterList;
+
 
     public CustomFuelArrayAdapter(Activity context,
                                   ArrayList<Combustible> mAdapterList) {
@@ -42,7 +42,7 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
 
     @Override
     public CombustibleViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_row, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fuel_list_row, viewGroup, false);
         CombustibleViewHolder viewHolder = new CombustibleViewHolder(view);
         return viewHolder;
     }

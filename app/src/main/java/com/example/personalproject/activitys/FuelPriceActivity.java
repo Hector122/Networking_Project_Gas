@@ -9,9 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.personalproject.R;
@@ -31,24 +29,11 @@ import java.util.ArrayList;
 public class FuelPriceActivity extends AppCompatActivity {
     private static final String TAG = "TAG_EXCEPTION";
 
-    // List view to content XML layout
-    //private ListView mListView;
+    // View to show the list of item.
     private RecyclerView mRecycleView;
 
-    // Hold XML Parse
-    private RssFeedMic mData;
-
-    // TextView that hold the title to show
-    private TextView mTitle;
-
-    // Custom Adapter to show the row
+    // Custom Adapter
     private CustomFuelArrayAdapter mAdapter;
-
-    // Reference the header view
-    private LinearLayout mHeaderView;
-
-    // String to hold the hearView message
-    private TextView mMessageHeader;
 
     // List with all parse.
     private ArrayList<Combustible> CustomListViewValues;
@@ -56,11 +41,20 @@ public class FuelPriceActivity extends AppCompatActivity {
     // Swipe to Refreshing Layout
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
-    //Async task
+    //Async Task Download XML
     private DownloadRss downloadRss;
 
-    //
+    //TODO: remove.
+    // View that hold the title to show.
+    //private TextView mTitle;
+
     //private TabLayout tabs;
+
+    // Reference the header view
+    //private LinearLayout mHeaderView;
+
+    // String to hold the hearView message
+    //private TextView mMessageHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,42 +65,20 @@ public class FuelPriceActivity extends AppCompatActivity {
         getRssMicAsyncTask();
     }
 
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        //Listener for the refresh view.
-        mSwipeRefreshLayout.setOnRefreshListener(new MyOnRefreshListeners());
-    }
-
-    private void getRssMicAsyncTask() {
-        if (new Client().isConnected(this)) {
-            downloadRss = new DownloadRss();
-            downloadRss.execute();
-        } else {
-            Toast.makeText(this, R.string.not_internet_connection, Toast.LENGTH_SHORT).show();
-
-            //TODO: imagen no tienes connection a internet more frendly
-        }
-    }
-
     /**
      * Initializer the variable.
      */
 
     private void initializerVariables() {
+        //Reference the recycle view.
         mRecycleView = (RecyclerView) findViewById(R.id.recycler_view_list);
         mRecycleView.setHasFixedSize(true);
 
         //Set the layout manger
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecycleView.setLayoutManager(layoutManager);
 
-        //Reference to the header title.
-        mTitle = (TextView) findViewById(R.id.text_view_title);
-        mTitle.setVisibility(View.INVISIBLE);
+        mRecycleView.setLayoutManager(layoutManager);
 
         //Initializer and set the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -114,8 +86,10 @@ public class FuelPriceActivity extends AppCompatActivity {
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
-        //TODO: set color maybe.
-
+        //TODO: Add TABS set color maybe.
+        //Reference to the header title.
+//        mTitle = (TextView) findViewById(R.id.text_view_title);
+//        mTitle.setVisibility(View.INVISIBLE);
 
 //        tabs = (TabLayout) findViewById(R.id.tabs);
 //        tabs.addTab(tabs.newTab().setText("testing 1"));
@@ -126,10 +100,31 @@ public class FuelPriceActivity extends AppCompatActivity {
 
     }
 
-    private void setListViewCustomAdapter() {
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //Listener for the refresh view.
+        mSwipeRefreshLayout.setOnRefreshListener(new MyOnRefreshListeners());
+        mSwipeRefreshLayout.setColorSchemeResources(R.color.green, R.color.yellow, R.color.red, R.color.blue);
+    }
+
+    private void getRssMicAsyncTask() {
+        if (new Client().isConnected(this)) {
+            downloadRss = new DownloadRss();
+            downloadRss.execute();
+        } else {
+            Toast.makeText(this, R.string.not_internet_connection, Toast.LENGTH_SHORT).show();
+
+            //TODO: Add image You don't have a internet connection, friendly
+        }
+    }
+
+
+    private void setListViewCustomAdapter(final RssFeedMic mData) {
         CustomListViewValues = mData.getCombustibles();
 
-        setTitle(mData.getTitle());
+        getTitleHeaderDate(mData.getTitle());
 
         // Create Custom Adapter
         mAdapter = new CustomFuelArrayAdapter(this, CustomListViewValues);
@@ -151,19 +146,13 @@ public class FuelPriceActivity extends AppCompatActivity {
      * @param text String with the title to show
      */
 
-    private void setTitle(String text) {
-        if (text.contains(":")) {
+    private String getTitleHeaderDate(String text) {
+        if (text != null && text.contains(":")) {
             String[] splitTitle = text.split(":");
-
-            //Set the title
-            mTitle.setText(splitTitle[1]);
-
-            //set list header row
-            // setListHeaderRow(splitTitle[1]);
+            return splitTitle[1];
         }
 
-        //Set visibility
-        mTitle.setVisibility(View.VISIBLE);
+        return "";
     }
 
 //    public void setListHeaderRow(String textInformation) {
@@ -195,10 +184,8 @@ public class FuelPriceActivity extends AppCompatActivity {
                 .get(mPosition);
 
         // SHOW ALERT
-        Toast.makeText(
-                this,
-                " Code:" + tempValues.getCode() + "Price:"
-                        + tempValues.getPrice(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, " Code:" + tempValues.getCode() + "Price:"
+                + tempValues.getPrice(), Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -220,7 +207,6 @@ public class FuelPriceActivity extends AppCompatActivity {
         public void onRefresh() {
             if (downloadRss.getStatus() != AsyncTask.Status.RUNNING) {
                 getRssMicAsyncTask();
-
             }
             mSwipeRefreshLayout.setRefreshing(false);
         }
@@ -247,10 +233,8 @@ public class FuelPriceActivity extends AppCompatActivity {
 
             if (!isCancelled()) {
                 // cache the data receiver is not exist.
-                if (cache
-                        .checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
-                    return cache
-                            .getValueFromCache(ActivityConstants.EXTRA_XML_MIC_CACHE);
+                if (cache.checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
+                    return cache.getValueFromCache(ActivityConstants.EXTRA_XML_MIC_CACHE);
                 } else {
                     return client.getRSS(getResources().getString(R.string.url));
                 }
@@ -268,9 +252,10 @@ public class FuelPriceActivity extends AppCompatActivity {
                 // TODO:Not cache for know, cache the data for five  minutes.
                 //setXmlInMemoryCache(result);
 
-                mData = parser.readEntry(result);
+                // XML Parse
+                RssFeedMic mData = parser.readEntry(result);
 
-                setListViewCustomAdapter();
+                setListViewCustomAdapter(mData);
 
             } catch (XmlPullParserException e) {
                 Log.e(TAG, e.getMessage());

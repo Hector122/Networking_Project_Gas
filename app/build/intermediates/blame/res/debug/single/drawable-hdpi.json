@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png",
+        "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/drawable-hdpi/logo_texaco.png",
+        "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/drawable-hdpi/logo_texaco.png"
+    },
+    {
+        "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/drawable-hdpi/fuel_gauge_converted.png",
+        "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/drawable-hdpi/fuel_gauge_converted.png"
+    }
+]
