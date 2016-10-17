@@ -28,6 +28,7 @@ MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/hector c
 MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:5:5-44
 MERGED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:22:5-24:41
 MERGED from [com.nhaarman.listviewanimations:lib-core-slh:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.volley:volley:1.0.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/AndroidManifest.xml:7:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:23.3.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
@@ -57,6 +58,7 @@ MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/hector c
 MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
 MERGED from [com.nhaarman.listviewanimations:lib-manipulation:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/AndroidManifest.xml:26:5-29:19
 MERGED from [com.nhaarman.listviewanimations:lib-core-slh:3.1.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/AndroidManifest.xml:26:5-27:19
+MERGED from [com.android.volley:volley:1.0.0] /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from /Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/AndroidManifest.xml:17:9-41
 	android:allowBackup

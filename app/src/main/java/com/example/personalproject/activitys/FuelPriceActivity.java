@@ -1,6 +1,5 @@
 package com.example.personalproject.activitys;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +11,10 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.example.personalproject.R;
 import com.example.personalproject.adapters.CustomFuelArrayAdapter;
 import com.example.personalproject.combustible.Combustible;
@@ -19,6 +22,7 @@ import com.example.personalproject.combustible.RssFeedMic;
 import com.example.personalproject.networking.Client;
 import com.example.personalproject.networking.MemoryCache;
 import com.example.personalproject.networking.ParserXmlMic;
+import com.example.personalproject.networking.VolleyHttpClient;
 import com.example.personalproject.utilitys.ActivityConstants;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -41,20 +45,8 @@ public class FuelPriceActivity extends AppCompatActivity {
     // Swipe to Refreshing Layout
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
-    //Async Task Download XML
-    private DownloadRss downloadRss;
-
-    //TODO: remove.
-    // View that hold the title to show.
-    //private TextView mTitle;
-
-    //private TabLayout tabs;
-
-    // Reference the header view
-    //private LinearLayout mHeaderView;
-
-    // String to hold the hearView message
-    //private TextView mMessageHeader;
+    // Spinner for the first request
+    private ProgressBar mSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +54,7 @@ public class FuelPriceActivity extends AppCompatActivity {
         setContentView(R.layout.recycle_view_activity);
 
         initializerVariables();
-        getRssMicAsyncTask();
+        getRssMicFromDataSource();
     }
 
     /**
@@ -70,34 +62,25 @@ public class FuelPriceActivity extends AppCompatActivity {
      */
 
     private void initializerVariables() {
-        //Reference the recycle view.
+        // Reference the recycle view.
         mRecycleView = (RecyclerView) findViewById(R.id.recycler_view_list);
         mRecycleView.setHasFixedSize(true);
 
-        //Set the layout manger
+        // Set the layout manger
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         mRecycleView.setLayoutManager(layoutManager);
 
-        //Initializer and set the toolbar.
+        // Initializer and set the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Initializer swipe to refresh.
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
-        //TODO: Add TABS set color maybe.
-        //Reference to the header title.
-//        mTitle = (TextView) findViewById(R.id.text_view_title);
-//        mTitle.setVisibility(View.INVISIBLE);
-
-//        tabs = (TabLayout) findViewById(R.id.tabs);
-//        tabs.addTab(tabs.newTab().setText("testing 1"));
-//        tabs.addTab(tabs.newTab().setText("testing 2"));
-//        tabs.addTab(tabs.newTab().setText("testing 3"));
-//
-//        tabs.setTabMode(TabLayout.MODE_SCROLLABLE);
-
+        // initializer progress bar.
+        mSpinner = (ProgressBar) findViewById(R.id.progress_bar);
     }
 
     @Override
@@ -109,15 +92,15 @@ public class FuelPriceActivity extends AppCompatActivity {
         mSwipeRefreshLayout.setColorSchemeResources(R.color.green, R.color.yellow, R.color.red, R.color.blue);
     }
 
-    private void getRssMicAsyncTask() {
+    private void getRssMicFromDataSource() {
         if (new Client().isConnected(this)) {
-            downloadRss = new DownloadRss();
-            downloadRss.execute();
+            downloadRss();
+
         } else {
             Toast.makeText(this, R.string.not_internet_connection, Toast.LENGTH_SHORT).show();
-
             //TODO: Add image You don't have a internet connection, friendly
         }
+
     }
 
 
@@ -155,23 +138,6 @@ public class FuelPriceActivity extends AppCompatActivity {
         return "";
     }
 
-//    public void setListHeaderRow(String textInformation) {
-//        if (mListView.getHeaderViewsCount() == 0) {
-//
-//            mHeaderView = (LinearLayout) getLayoutInflater().inflate(
-//                    R.layout.list_view_information_date_header_view, mListView, false);
-//
-//            mMessageHeader = (TextView) mHeaderView.findViewById(R.id.text_header);
-//            mMessageHeader.setText(textInformation);
-//
-//            //set header view on ListView
-//            mListView.setTag(ActivityConstants.HEADER_VIEW);
-//
-//            mListView.addHeaderView(mHeaderView, null, false);
-//        }
-//    }
-
-
     /**
      * This function used by adapter
      *
@@ -205,66 +171,116 @@ public class FuelPriceActivity extends AppCompatActivity {
 
         @Override
         public void onRefresh() {
-            if (downloadRss.getStatus() != AsyncTask.Status.RUNNING) {
-                getRssMicAsyncTask();
-            }
+            downloadRss();
             mSwipeRefreshLayout.setRefreshing(false);
         }
     }
 
-    /**
-     * AsyncTask that get the XML and parse the XML form MIC
+    /***
+     * Get the XML data from MIC "Ministerio De Industria y Comercio" of the Dominican Republic.
      */
 
-    private class DownloadRss extends AsyncTask<Void, Void, String> {
-        MemoryCache cache;
-        ProgressBar spinner;
+    private void downloadRss() {
+        final String url = getResources().getString(R.string.url);
 
-        @Override
-        protected void onPreExecute() {
-            spinner = (ProgressBar) findViewById(R.id.progress_bar);
-            cache = MemoryCache.getInstance();
-        }
-
-        @Override
-        protected String doInBackground(Void... params) {
-            Client client = new Client();
-            String result = null;
-
-            if (!isCancelled()) {
-                // cache the data receiver is not exist.
-                if (cache.checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
-                    return cache.getValueFromCache(ActivityConstants.EXTRA_XML_MIC_CACHE);
-                } else {
-                    return client.getRSS(getResources().getString(R.string.url));
-                }
+        // Request a string response for the provider URL.
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                mSpinner.setVisibility(View.INVISIBLE);
+                parseXmlResponse(response);
             }
-            return result;
-        }
+        }, new Response.ErrorListener() {
 
-        @Override
-        protected void onPostExecute(String result) {
-            ParserXmlMic parser = new ParserXmlMic();
-
-            spinner.setVisibility(View.GONE);
-
-            try {
-                // TODO:Not cache for know, cache the data for five  minutes.
-                //setXmlInMemoryCache(result);
-
-                // XML Parse
-                RssFeedMic mData = parser.readEntry(result);
-
-                setListViewCustomAdapter(mData);
-
-            } catch (XmlPullParserException e) {
-                Log.e(TAG, e.getMessage());
-                e.printStackTrace();
-
-            } catch (IOException e) {
-                Log.e(TAG, e.getMessage());
-                e.printStackTrace();
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, error.getMessage());
             }
+        });
+        //TODO: implement a custom cache for tree minute independent of the response changes or not.
+
+        // Get the singleton instance
+        VolleyHttpClient volleyHttpClient = VolleyHttpClient.getInstance(this.getApplicationContext());
+
+        // Add request to the request queue
+        volleyHttpClient.addRequestQueue(stringRequest);
+    }
+
+    /**
+     * Parse the String Response.
+     *
+     * @param response
+     */
+    private void parseXmlResponse(String response) {
+        try {
+            RssFeedMic mRssFeedData = new ParserXmlMic().readEntry(response);
+            setListViewCustomAdapter(mRssFeedData);
+
+        } catch (XmlPullParserException e) {
+            Log.e(TAG, e.getMessage());
+            e.printStackTrace();
+
+        } catch (IOException e) {
+            Log.e(TAG, e.getMessage());
+            e.printStackTrace();
         }
     }
+
+    /**
+     * AsyncTask that get the XML and parse the XML form MIC.
+     */
+
+    // TODO:Remove old sync task.
+//    private class DownloadRss extends AsyncTask<Void, Void, String> {
+//        MemoryCache cache;
+//        ProgressBar mSpinner;
+//
+//        @Override
+//        protected void onPreExecute() {
+//            mSpinner = (ProgressBar) findViewById(R.id.progress_bar);
+//            cache = MemoryCache.getInstance();
+//        }
+//
+//        @Override
+//        protected String doInBackground(Void... params) {
+//            Client client = new Client();
+//            String result = null;
+//
+//            if (!isCancelled()) {
+//                // cache the data receiver is not exist.
+//                if (cache.checkIfCacheContainsKey(ActivityConstants.EXTRA_XML_MIC_CACHE)) {
+//                    return cache.getValueFromCache(ActivityConstants.EXTRA_XML_MIC_CACHE);
+//                } else {
+//                    return client.getRSS(getResources().getString(R.string.url));
+//                }
+//            }
+//            return result;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(String result) {
+//            ParserXmlMic parser = new ParserXmlMic();
+//
+//            mSpinner.setVisibility(View.GONE);
+//
+//            try {
+//
+//                //setXmlInMemoryCache(result);
+//
+//                // XML Parse
+//                RssFeedMic mData = parser.readEntry(result);
+//
+//                setListViewCustomAdapter(mData);
+//
+//            } catch (XmlPullParserException e) {
+//                Log.e(TAG, e.getMessage());
+//                e.printStackTrace();
+//
+//            } catch (IOException e) {
+//                Log.e(TAG, e.getMessage());
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 }

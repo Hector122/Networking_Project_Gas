@@ -96,12 +96,12 @@
         "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/android_parent_pager.xml"
     },
     {
-        "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_alert_dialog_material.xml"
-    },
-    {
         "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/layout/toolbar.xml",
         "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/toolbar.xml"
+    },
+    {
+        "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_alert_dialog_material.xml"
     },
     {
         "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
@@ -160,12 +160,12 @@
         "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/notification_template_media.xml"
     },
     {
-        "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
         "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/layout/fuel_list_row_header.xml",
         "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/src/main/res/layout/fuel_list_row_header.xml"
+    },
+    {
+        "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",

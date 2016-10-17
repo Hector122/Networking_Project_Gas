@@ -16,15 +16,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ParserXmlMic {
-    //TODO:  remove
-    //private static final String NAMESPACE = "rssversion";
-
-
     private static final String ITEM = "item"; /* parent node */
     private static final String TITLE = "title";
     private static final String PUB_DATE = "pubDate";
     private static final String DESCRIPTION = "description";
-
 
     //TODO: this block now is never used
 //    private static final String GASOLINE_P = "gas95";
