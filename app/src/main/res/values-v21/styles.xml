@@ -12,12 +12,16 @@
         <item name="android:colorPrimary">@color/colorPrimary</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:colorAccent">@color/colorAccent</item>
-        <item name="android:navigationBarColor">@color/navigationBarColor </item>
+        <item name="android:navigationBarColor">@color/navigationBarColor</item>
         <item name="android:windowBackground">@color/textColorPrimary</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:displayOptions">disableHome</item>
 
     </style>
 
+    <style name="AppTheme" parent="android:Theme.Material">
+        <!-- Animations for transaction -->
+        <item name="android:windowContentTransitions">true</item>
+    </style>
 
 </resources>

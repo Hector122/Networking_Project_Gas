@@ -1,14 +1,9 @@
 package com.example.personalproject.combustible;
 
-import java.io.Serializable;
-
 public class Combustible {
 
-    private double price;
-    private double lastPrice;
-
-    private String description;
-    private String code;
+    private double price, lastPrice;
+    private String description, code;
 
     // -- Getters and Setters -- //
 

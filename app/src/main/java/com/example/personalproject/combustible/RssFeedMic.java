@@ -3,7 +3,8 @@ package com.example.personalproject.combustible;
 import java.util.ArrayList;
 
 public class RssFeedMic {
-    private String title, publicationDate;
+    private String title;
+    private String publicationDate;
     private ArrayList<Combustible> combustibles = new ArrayList<>();
 
 //-- Getters and setters --

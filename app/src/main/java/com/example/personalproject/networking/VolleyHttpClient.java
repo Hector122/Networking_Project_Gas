@@ -27,7 +27,6 @@ public class VolleyHttpClient {
         mRequestQueue = getRequestQueue();
     }
 
-
     public static synchronized VolleyHttpClient getInstance(Context context) {
         if (mSingletonVolley == null) {
             mSingletonVolley = new VolleyHttpClient(context);
@@ -36,7 +35,6 @@ public class VolleyHttpClient {
     }
 
     /***
-     *
      * @return
      */
     public RequestQueue getRequestQueue() {

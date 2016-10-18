@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -19,11 +20,9 @@ import com.example.personalproject.R;
 import com.example.personalproject.adapters.CustomFuelArrayAdapter;
 import com.example.personalproject.combustible.Combustible;
 import com.example.personalproject.combustible.RssFeedMic;
-import com.example.personalproject.networking.Client;
-import com.example.personalproject.networking.MemoryCache;
 import com.example.personalproject.networking.ParserXmlMic;
 import com.example.personalproject.networking.VolleyHttpClient;
-import com.example.personalproject.utilitys.ActivityConstants;
+import com.example.personalproject.utilitys.Utilitys;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -69,7 +68,6 @@ public class FuelPriceActivity extends AppCompatActivity {
         // Set the layout manger
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
         mRecycleView.setLayoutManager(layoutManager);
 
         // Initializer and set the toolbar.
@@ -93,14 +91,13 @@ public class FuelPriceActivity extends AppCompatActivity {
     }
 
     private void getRssMicFromDataSource() {
-        if (new Client().isConnected(this)) {
+        if (Utilitys.isConnected(this)) {
             downloadRss();
 
         } else {
             Toast.makeText(this, R.string.not_internet_connection, Toast.LENGTH_SHORT).show();
             //TODO: Add image You don't have a internet connection, friendly
         }
-
     }
 
 
@@ -154,24 +151,26 @@ public class FuelPriceActivity extends AppCompatActivity {
                 + tempValues.getPrice(), Toast.LENGTH_LONG).show();
     }
 
-    /**
-     * Save the data receive into the memory cache.
-     *
-     * @param data String with the xml to save.
-     */
 
-    private void setXmlInMemeoryCache(String data) {
-        MemoryCache cache = MemoryCache.getInstance();
-
-        cache.putValueInCache(ActivityConstants.EXTRA_XML_MIC_CACHE, data);
-    }
+//TODO: remove Memory cache
+//    /**
+//     * Save the data receive into the memory cache.
+//     *
+//     * @param data String with the xml to save.
+//     */
+//
+//    private void setXmlInMemeoryCache(String data) {
+//        MemoryCache cache = MemoryCache.getInstance();
+//
+//        cache.putValueInCache(ActivityConstants.EXTRA_XML_MIC_CACHE, data);
+//    }
 
 
     private class MyOnRefreshListeners implements SwipeRefreshLayout.OnRefreshListener {
 
         @Override
         public void onRefresh() {
-            downloadRss();
+            getRssMicFromDataSource();
             mSwipeRefreshLayout.setRefreshing(false);
         }
     }
@@ -188,6 +187,8 @@ public class FuelPriceActivity extends AppCompatActivity {
                 Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Log.i(TAG, response);
+
                 mSpinner.setVisibility(View.INVISIBLE);
                 parseXmlResponse(response);
             }
@@ -197,8 +198,17 @@ public class FuelPriceActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, error.getMessage());
             }
-        });
+        }) {
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                    Log.i(TAG, String.valueOf(response.statusCode));
+
+
+                return super.parseNetworkResponse(response);
+            }
+        };
         //TODO: implement a custom cache for tree minute independent of the response changes or not.
+        // http://stackoverflow.com/questions/17541498/android-volley-override-cache-timeout-for-json-request
 
         // Get the singleton instance
         VolleyHttpClient volleyHttpClient = VolleyHttpClient.getInstance(this.getApplicationContext());

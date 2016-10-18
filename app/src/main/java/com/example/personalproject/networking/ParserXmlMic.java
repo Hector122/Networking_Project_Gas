@@ -21,17 +21,6 @@ public class ParserXmlMic {
     private static final String PUB_DATE = "pubDate";
     private static final String DESCRIPTION = "description";
 
-    //TODO: this block now is never used
-//    private static final String GASOLINE_P = "gas95";
-//    private static final String GASOLINE_R = "gas89";
-//    private static final String DIESEL_P = "gasoilp";
-//    private static final String DIESEL_R = "gasoilr";
-//    private static final String KEROSENE = "kerosene";
-//    private static final String GLP = "glp";
-//    private static final String GNV = "gnv";
-//    private static final String NS = null;
-
-
     /***
      * This function reader the xml data in the string format and return a RssFeeMic with all
      * the data need.
@@ -95,7 +84,7 @@ public class ParserXmlMic {
             }
 
             String name = parser.getName();
-            String text = null;
+            String text;
 
             if (name != null) {
                 text = readText(parser);
@@ -118,30 +107,6 @@ public class ParserXmlMic {
         rssFeedItem.setCombustibles(combustibles);
 
         return rssFeedItem;
-    }
-
-    /***
-     * @param parser
-     * @throws XmlPullParserException
-     * @throws IOException
-     */
-
-    private void skipTag(XmlPullParser parser) throws XmlPullParserException,
-            IOException {
-        if (parser.getEventType() != XmlPullParser.START_TAG) {
-            throw new IllegalStateException();
-        }
-        int depth = 1;
-        while (depth != 0) {
-            switch (parser.next()) {
-                case XmlPullParser.END_TAG:
-                    depth--;
-                    break;
-                case XmlPullParser.START_TAG:
-                    depth++;
-                    break;
-            }
-        }
     }
 
     /**
@@ -203,9 +168,9 @@ public class ParserXmlMic {
             String[] split = temp.split("-");
 
             int count = split.length;
-            for (int i = 1; i < count ; i += 2) {
+            for (int i = 1; i < count; i += 2) {
                 Combustible combustible = new Combustible();
-                combustible.setDescription(split[i]);
+                combustible.setDescription(split[i].replace(":",""));
                 combustible.setPrice(getMoneyWithoutSpecialCharacter(split[i + 1]));
 
                 //TODO: remove went you save the data.
@@ -219,7 +184,7 @@ public class ParserXmlMic {
 
                 combustible.setLastPrice(combustible.getPrice() + number);
 
-              //  Log.i("TAG_Price", String.valueOf(combustible.getLastPrice()));
+                //  Log.i("TAG_Price", String.valueOf(combustible.getLastPrice()));
 
                 combustiblesList.add(combustible);
             }
@@ -228,91 +193,15 @@ public class ParserXmlMic {
         return combustiblesList;
     }
 
+    /***
+     * Get the String price RD$ and remove the currency notation.
+     *
+     * @param value
+     * @return
+     * @throws NumberFormatException
+     */
     private double getMoneyWithoutSpecialCharacter(String value) throws NumberFormatException {
-        StringBuilder builder = new StringBuilder(value);
-        builder.replace(0, 3, "");
-
-        return Double.valueOf(builder.toString());
+        String moneyWithoutCharacter = new StringBuilder(value).replace(0, 3, "").toString();
+        return Double.valueOf(moneyWithoutCharacter);
     }
-
-
-    //TODO: second method to parse the data from description.
-    /*private RssFeedMic readEntry(XmlPullParser parser)
-            throws XmlPullParserException, IOException {
-        String title = "";
-        String pubDate = "";
-
-        List<Combustible> combustibles = new ArrayList<Combustible>();
-
-        RssFeedMic rssFeedItem = new RssFeedMic();
-
-        int eventType = parser.getEventType();
-
-        while (parser.next() != XmlPullParser.END_DOCUMENT) {
-            if (eventType != XmlPullParser.START_TAG) {
-                continue;
-            }
-
-            String name = parser.getName();
-            String text = null;
-
-            if (name != null) {
-                text = readText(parser);
-                Combustible combustible = new Combustible();
-
-                if (name.equalsIgnoreCase(TITLE)) {
-                    title = text;
-
-
-                } else if (name.equalsIgnoreCase(PUB_DATE)) {
-                    pubDate = text;
-
-                } else if (name.equalsIgnoreCase(GASOLINE_P)) {
-                    combustible.setCode(name);
-                    combustible.setPrice(Double.valueOf(text));
-                    combustible.setDescription("Gasolina Premium");
-
-                } else if (name.equalsIgnoreCase(GASOLINE_R)) {
-                    combustible.setCode(name);
-                    combustible.setPrice(Double.valueOf(text));
-                    combustible.setDescription("Gasolina Regular");
-
-                } else if (name.equalsIgnoreCase(DIESEL_P)) {
-                    combustible.setCode(name);
-                    combustible.setPrice(Double.valueOf(text));
-                    combustible.setDescription("Gasoil Premium");
-
-                } else if (name.equalsIgnoreCase(DIESEL_R)) {
-                    combustible.setCode(name);
-                    combustible.setPrice(Double.valueOf(text));
-                    combustible.setDescription("Gasoil Regular");
-
-                } else if (name.equalsIgnoreCase(KEROSENE)) {
-                    combustible.setCode(name);
-                    combustible.setPrice(Double.valueOf(text));
-                    combustible.setDescription("Kerosene");
-
-                } else if (name.equalsIgnoreCase(GLP)) {
-                    combustible.setCode(name);
-                    combustible.setPrice(Double.valueOf(text));
-                    combustible.setDescription("Gas Licuado de Petróleo (GLP)");
-
-                } else if (name.equalsIgnoreCase(GNV)) {
-                    combustible.setCode(name);
-                    combustible.setPrice(Double.valueOf(text));
-                    combustible.setDescription("Gas Natural Vehicular (GNV)");
-                }
-
-                if (combustible.getCode() != null) {
-                    combustibles.add(combustible);
-                }
-            }
-        }
-
-        rssFeedItem.setTitle(title);
-        rssFeedItem.setPublicationDate(pubDate);
-        rssFeedItem.setCombustibles(combustibles);
-
-        return rssFeedItem;
-    } */
 }

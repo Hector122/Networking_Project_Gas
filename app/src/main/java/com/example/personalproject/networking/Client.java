@@ -13,7 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-//TODO:Implement okHttp , or retrofit.
+//TODO:Implement Volley, Retrofit and delete this class.
 public class Client {
     /* Time in milliseconds */
     private static final int TIMEOUT_READ = 10000;
@@ -36,8 +36,7 @@ public class Client {
         try {
             URL url = new URL(myUrl);
 
-            HttpURLConnection connection = (HttpURLConnection) url
-                    .openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setReadTimeout(TIMEOUT_READ);
             connection.setConnectTimeout(TIMEOUT_CONNECT);
             connection.setRequestMethod("GET");
@@ -115,11 +114,12 @@ public class Client {
     public boolean isConnected(Context context) {
         ConnectivityManager connManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
 
-        if (networkInfo != null && networkInfo.isConnected())
+        NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
             return true;
-        else
+        } else {
             return false;
+        }
     }
 }

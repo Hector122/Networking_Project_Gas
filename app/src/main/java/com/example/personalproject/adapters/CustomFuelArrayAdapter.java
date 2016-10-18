@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.personalproject.R;
-import com.example.personalproject.activitys.FuelPriceActivity;
 import com.example.personalproject.combustible.Combustible;
 
 import java.util.ArrayList;
@@ -21,13 +19,11 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
     // List of items that are shown in the assistance list view.
     private final ArrayList<Combustible> mAdapterList;
 
-
     public CustomFuelArrayAdapter(Activity context,
                                   ArrayList<Combustible> mAdapterList) {
         this.mContext = context;
         this.mAdapterList = mAdapterList;
     }
-
 
     @Override
     public void onBindViewHolder(CombustibleViewHolder holder, int position) {
@@ -35,10 +31,9 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
 
         holder.description.setText(combustible.getDescription());
         holder.price.setText(setNumberFormatToShow(combustible.getPrice()));
-        holder.differencePrice.setText(setNumberFormatToShow(combustible.getLastPrice()));
+        holder.differencePrice.setText(setNumberFormatToShow(getDifferencePrice(combustible)));
         holder.image.setImageResource(getCorrespondingImage(combustible));
     }
-
 
     @Override
     public CombustibleViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
@@ -52,10 +47,15 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
         return mAdapterList.size();
     }
 
-    //TODO: check this.
+    /***
+     * Return a string with the dominican currency prefix RD$ for human readable
+     *
+     * @param money
+     * @return
+     */
     private static String setNumberFormatToShow(double money) {
         String moneySymbol = "RD$";
-        String numberFormatted = "";
+        String numberFormatted;
 
         String number = String.valueOf(money);
 
@@ -71,6 +71,8 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
                 decimalDigit = decimalDigit.substring(0, 2);
 
                 numberFormatted = numberSplit[0] + "." + decimalDigit;
+            } else {
+                numberFormatted = number;
             }
 
         } else {
@@ -88,7 +90,6 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
         int imageById = 0;
 
         double lastPrice = combustible.getLastPrice();
-
         double currentPrice = combustible.getPrice();
 
         if (currentPrice > lastPrice) {
@@ -107,14 +108,19 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
         return imageById;
     }
 
+    /**
+     * @param combustible
+     * @return
+     */
+
     public double getDifferencePrice(Combustible combustible) {
         return (combustible.getPrice() - combustible.getLastPrice());
     }
 
 
-    /*********
+    /***
      * Create a holder Class to contain inflated xml file elements
-     *********/
+     */
     public static class CombustibleViewHolder extends RecyclerView.ViewHolder {
         protected TextView price;
         protected TextView differencePrice;
@@ -134,26 +140,26 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
     /**
      *
      */
-    private class OnItemClickListener implements OnClickListener {
-        int position;
-
-        public OnItemClickListener(int position) {
-            this.position = position;
-        }
-
-        @Override
-        public void onClick(View v) {
-            // TODO Auto-generated method stub
-
-            FuelPriceActivity fuelPrice = (FuelPriceActivity) mContext;
-
-            /****
-             * Call onItemClick Method inside CustomListViewAndroidExample Class
-             * ( See Below )
-             ****/
-
-            fuelPrice.onItemClick(position);
-
-        }
-    }
+//    private class OnItemClickListener implements OnClickListener {
+//        int position;
+//
+//        public OnItemClickListener(int position) {
+//            this.position = position;
+//        }
+//
+//        @Override
+//        public void onClick(View v) {
+//            // TODO Auto-generated method stub
+//
+//            FuelPriceActivity fuelPrice = (FuelPriceActivity) mContext;
+//
+//            /****
+//             * Call onItemClick Method inside CustomListViewAndroidExample Class
+//             * ( See Below )
+//             ****/
+//
+//            fuelPrice.onItemClick(position);
+//
+//        }
+//    }
 }
