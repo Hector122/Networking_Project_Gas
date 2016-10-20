@@ -6,8 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:clickable="true"
-    tools:context=".DashboardActivity" >
+    android:clickable="true">
 
     <LinearLayout
         android:id="@+id/linear_one"

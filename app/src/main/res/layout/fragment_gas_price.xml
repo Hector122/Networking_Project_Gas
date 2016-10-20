@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gas_price_fragment"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@color/light_gray">
@@ -13,8 +14,7 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar">
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_list"
@@ -23,8 +23,5 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
 
 </RelativeLayout>

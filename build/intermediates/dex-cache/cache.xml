@@ -2,6 +2,14 @@
 <items version="2" >
 
     <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.0.1_9bcd92fb2e21a3a96eb2b3e8c341c9df0ce3f4bf/classes.dex" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/hector castillo/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
         jumboMode="true"
@@ -19,12 +27,36 @@
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.nhaarman.listviewanimations-lib-core-slh-3.1.0_74f2f05a2b5a0a7c2ddd558dee9da7ff178b639b/classes.dex" />
     </item>
     <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_ab109d97b5a8bbc3e465588910a6ac12675af735/classes.dex" />
+    </item>
+    <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.0.1_11766cd0db80061765a29b59dc3640cb2bd10a5a/classes.dex" />
+    </item>
+    <item
         jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.0.1_ee85ed2f8011eadbcf00fbf18b777b4b8371492f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/listviewanimations_lib-core_3.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f3f9629b068554d8513a2aaf34418171bf430851">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/2/listviewanimations_lib-core_3.1.0_595fbcb922918d8042bdddf8241a6a6e2c5cfa7a/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -36,140 +68,30 @@
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.volley-volley-1.0.0_aeca8ba83d7d320dcb6bd43e5a476d01a32d505e/classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.0.1_9bcd92fb2e21a3a96eb2b3e8c341c9df0ce3f4bf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_ab109d97b5a8bbc3e465588910a6ac12675af735/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f90247679e02ccc74a1168b7d41bc4e7d681a3a9">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b0668e9562adb05b1d3a9b457dd37e8767c65643/classes.dex" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_a41f539bfe088272681324993b1798e068ce614c/classes.dex" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8cc1a3580a41723e98c40cd4f22f37678ff4f350">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b0668e9562adb05b1d3a9b457dd37e8767c65643/classes.dex" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.3.0_b62b51c083526c9cd740d81f991b3ca844030636/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/nineoldandroids-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/2/nineoldandroids-2.4.0_91f28ce8dd35f8e27f3d161c9599c3b0890bfcbe/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.0.1_11766cd0db80061765a29b59dc3640cb2bd10a5a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_6d082403c9e4095de01675ccd78253fdc6e16630/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.nhaarman.listviewanimations-lib-manipulation-3.1.0_8af1e1b4bfde14de475400a09c2c1b7cc764a54d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/listviewanimations_lib-core_3.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f3f9629b068554d8513a2aaf34418171bf430851">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/2/listviewanimations_lib-core_3.1.0_595fbcb922918d8042bdddf8241a6a6e2c5cfa7a/classes.dex" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.0.1_9bcd92fb2e21a3a96eb2b3e8c341c9df0ce3f4bf/classes.dex" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_ab109d97b5a8bbc3e465588910a6ac12675af735/classes.dex" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.0.1_11766cd0db80061765a29b59dc3640cb2bd10a5a/classes.dex" />
-    </item>
-    <item
-        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/listviewanimations_lib-core_3.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f3f9629b068554d8513a2aaf34418171bf430851">
-        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/2/listviewanimations_lib-core_3.1.0_595fbcb922918d8042bdddf8241a6a6e2c5cfa7a/classes.dex" />
-    </item>
-    <item
         jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="5009a66f0f849ef4c11aaf6c5dd629c0fef84a67">
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f6bb5e3f81bb2921ce63d5f827ec0fbce471da00/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.0.1_9bcd92fb2e21a3a96eb2b3e8c341c9df0ce3f4bf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_ab109d97b5a8bbc3e465588910a6ac12675af735/classes.dex" />
     </item>
     <item
         jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
@@ -196,6 +118,15 @@
         revision="23.0.1"
         sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.3.0_50217b6d8ac89b08c217dc6abd13018da2d48a52/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5328b9827ee2daf91b35e0c6ee648e2f1cfb6ba1">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b0668e9562adb05b1d3a9b457dd37e8767c65643/classes.dex" />
     </item>
     <item
         jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/palette-v7/23.0.1/jars/classes.jar"
@@ -224,6 +155,14 @@
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f6bb5e3f81bb2921ce63d5f827ec0fbce471da00/classes.dex" />
     </item>
     <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_a41f539bfe088272681324993b1798e068ce614c/classes.dex" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
         jumboMode="true"
@@ -250,6 +189,14 @@
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/2/nineoldandroids-2.4.0_91f28ce8dd35f8e27f3d161c9599c3b0890bfcbe/classes.dex" />
     </item>
     <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8cc1a3580a41723e98c40cd4f22f37678ff4f350">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b0668e9562adb05b1d3a9b457dd37e8767c65643/classes.dex" />
+    </item>
+    <item
         jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -264,6 +211,14 @@
         revision="23.0.1"
         sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_6d082403c9e4095de01675ccd78253fdc6e16630/classes.dex" />
+    </item>
+    <item
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.3.0_b62b51c083526c9cd740d81f991b3ca844030636/classes.dex" />
     </item>
     <item
         jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/jars/classes.jar"
@@ -290,6 +245,51 @@
         revision="23.0.1"
         sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
         <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_a41f539bfe088272681324993b1798e068ce614c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/nineoldandroids-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/2/nineoldandroids-2.4.0_91f28ce8dd35f8e27f3d161c9599c3b0890bfcbe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.0.1_11766cd0db80061765a29b59dc3640cb2bd10a5a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_6d082403c9e4095de01675ccd78253fdc6e16630/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.nhaarman.listviewanimations-lib-manipulation-3.1.0_8af1e1b4bfde14de475400a09c2c1b7cc764a54d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/libs/listviewanimations_lib-core_3.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f3f9629b068554d8513a2aaf34418171bf430851">
+        <dex dex="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/2/listviewanimations_lib-core_3.1.0_595fbcb922918d8042bdddf8241a6a6e2c5cfa7a/classes.dex" />
     </item>
 
 </items>

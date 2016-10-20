@@ -1,6 +1,6 @@
 package com.example.personalproject.adapters;
 
-import android.app.Activity;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,16 +10,17 @@ import android.widget.TextView;
 
 import com.example.personalproject.R;
 import com.example.personalproject.combustible.Combustible;
+import com.example.personalproject.utilitys.Utilitys;
 
 import java.util.ArrayList;
 
 public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArrayAdapter.CombustibleViewHolder> {
     // Activity context
-    private final Activity mContext;
+    private final Context mContext;
     // List of items that are shown in the assistance list view.
     private final ArrayList<Combustible> mAdapterList;
 
-    public CustomFuelArrayAdapter(Activity context,
+    public CustomFuelArrayAdapter(Context context,
                                   ArrayList<Combustible> mAdapterList) {
         this.mContext = context;
         this.mAdapterList = mAdapterList;
@@ -30,8 +31,8 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
         Combustible combustible = mAdapterList.get(position);
 
         holder.description.setText(combustible.getDescription());
-        holder.price.setText(setNumberFormatToShow(combustible.getPrice()));
-        holder.differencePrice.setText(setNumberFormatToShow(getDifferencePrice(combustible)));
+        holder.price.setText(Utilitys.setNumberFormatToShow(combustible.getPrice()));
+        holder.differencePrice.setText(Utilitys.setNumberFormatToShow(getDifferencePrice(combustible)));
         holder.image.setImageResource(getCorrespondingImage(combustible));
     }
 
@@ -47,41 +48,6 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
         return mAdapterList.size();
     }
 
-    /***
-     * Return a string with the dominican currency prefix RD$ for human readable
-     *
-     * @param money
-     * @return
-     */
-    private static String setNumberFormatToShow(double money) {
-        String moneySymbol = "RD$";
-        String numberFormatted;
-
-        String number = String.valueOf(money);
-
-        if (number.contains(".")) {
-            String[] numberSplit = number.split("\\.");
-            String decimalDigit = numberSplit[1];
-
-            if (decimalDigit.length() < 2) {
-                decimalDigit += "0";
-
-                numberFormatted = numberSplit[0] + "." + decimalDigit;
-            } else if (decimalDigit.length() > 2) {
-                decimalDigit = decimalDigit.substring(0, 2);
-
-                numberFormatted = numberSplit[0] + "." + decimalDigit;
-            } else {
-                numberFormatted = number;
-            }
-
-        } else {
-            numberFormatted = number + ".00";
-        }
-
-        return moneySymbol + numberFormatted;
-    }
-
     /**
      * @param combustible
      * @return
@@ -93,15 +59,15 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
         double currentPrice = combustible.getPrice();
 
         if (currentPrice > lastPrice) {
-            // price up
+            // Price up
             imageById = R.drawable.arrow_up_red;
 
         } else if (currentPrice == lastPrice) {
-            // price the same
+            // Price equals
             imageById = R.drawable.arrow_ecuals_yellow;
 
         } else {
-            // price down
+            // Price down
             imageById = R.drawable.arrow_down_green;
         }
 

@@ -29,8 +29,8 @@
                 </intent-filter>
             </activity>
             <activity
-                android:name="com.example.personalproject.activitys.DashboardActivity"
-                android:parentActivityName="com.example.personalproject.activitys.DashboardActivity"></activity>
+                android:name="com.example.personalproject.activitys.DashboardContainerActivity"
+                android:parentActivityName="com.example.personalproject.activitys.DashboardContainerActivity"></activity>
 
         </application>
 

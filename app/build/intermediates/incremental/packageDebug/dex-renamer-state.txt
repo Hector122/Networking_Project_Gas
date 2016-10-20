@@ -1,4 +1,4 @@
-#Tue Oct 18 10:29:16 AST 2016
+#Thu Oct 20 15:40:40 AST 2016
 base.0=/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f6bb5e3f81bb2921ce63d5f827ec0fbce471da00
 renamed.1=classes2.dex
 renamed.0=classes.dex
