@@ -4,33 +4,40 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="1397036066894610"
+    timestamp="1467564087870036"
     token="434869108193575141"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2131" />
+        duration="970" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="237" />
+        duration="95" />
     <task
         name="verifier"
-        duration="104" />
+        duration="30" />
 
     <artifact
-        location="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="1397036066894610"
+        timestamp="1466653359571178"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="1467564087870036"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/hector castillo/AndroidStudioProjects/Networking_Project_Gas/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

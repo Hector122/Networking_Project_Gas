@@ -633,7 +633,7 @@ int id action_settings 0x7f0b0096
 int id activity_chooser_view_content 0x7f0b003c
 int id alertTitle 0x7f0b0048
 int id always 0x7f0b0032
-int id appbar 0x7f0b0071
+int id appbar 0x7f0b0070
 int id beginning 0x7f0b0030
 int id bottom 0x7f0b001c
 int id btn_calculate 0x7f0b006c
@@ -654,7 +654,6 @@ int id contentPanel 0x7f0b0049
 int id curren_price 0x7f0b007f
 int id custom 0x7f0b004f
 int id customPanel 0x7f0b004e
-int id dashboard_container 0x7f0b0070
 int id decor_content_parent 0x7f0b0057
 int id default_activity_button 0x7f0b003f
 int id description_title 0x7f0b007c
@@ -674,6 +673,7 @@ int id fill_horizontal 0x7f0b002e
 int id fill_vertical 0x7f0b0021
 int id firs_row 0x7f0b008e
 int id fixed 0x7f0b0037
+int id fragment_container 0x7f0b0072
 int id gas_price_fragment 0x7f0b0075
 int id home 0x7f0b0004
 int id homeAsUp 0x7f0b000f
@@ -754,7 +754,7 @@ int id thumbnail 0x7f0b007a
 int id time 0x7f0b0087
 int id title 0x7f0b0042
 int id title_template 0x7f0b0047
-int id toolbar 0x7f0b0072
+int id toolbar 0x7f0b0071
 int id top 0x7f0b0025
 int id topPanel 0x7f0b0046
 int id txtv_calculate 0x7f0b006e

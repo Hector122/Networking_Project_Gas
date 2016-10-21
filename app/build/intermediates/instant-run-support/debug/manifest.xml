@@ -18,18 +18,14 @@
         android:label="@string/app_name"
         android:theme="@style/CustomTheme" >
         <activity
-            android:name="com.example.personalproject.activitys.FuelPriceActivity"
-            android:label="@string/app_name" >
+            android:name="com.example.personalproject.activity.DashboardContainerActivity"
+            android:parentActivityName="com.example.personalproject.activity.DashboardContainerActivity"
+            android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.example.personalproject.activitys.DashboardContainerActivity"
-            android:parentActivityName="com.example.personalproject.activitys.DashboardContainerActivity"
-            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity" />
         <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity" />

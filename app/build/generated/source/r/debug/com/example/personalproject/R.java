@@ -2354,7 +2354,7 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f0b003c;
         public static final int alertTitle=0x7f0b0048;
         public static final int always=0x7f0b0032;
-        public static final int appbar=0x7f0b0071;
+        public static final int appbar=0x7f0b0070;
         public static final int beginning=0x7f0b0030;
         public static final int bottom=0x7f0b001c;
         public static final int btn_calculate=0x7f0b006c;
@@ -2375,7 +2375,6 @@ containing a value of this type.
         public static final int curren_price=0x7f0b007f;
         public static final int custom=0x7f0b004f;
         public static final int customPanel=0x7f0b004e;
-        public static final int dashboard_container=0x7f0b0070;
         public static final int decor_content_parent=0x7f0b0057;
         public static final int default_activity_button=0x7f0b003f;
         public static final int description_title=0x7f0b007c;
@@ -2395,6 +2394,7 @@ containing a value of this type.
         public static final int fill_vertical=0x7f0b0021;
         public static final int firs_row=0x7f0b008e;
         public static final int fixed=0x7f0b0037;
+        public static final int fragment_container=0x7f0b0072;
         public static final int gas_price_fragment=0x7f0b0075;
         public static final int home=0x7f0b0004;
         public static final int homeAsUp=0x7f0b000f;
@@ -2475,7 +2475,7 @@ containing a value of this type.
         public static final int time=0x7f0b0087;
         public static final int title=0x7f0b0042;
         public static final int title_template=0x7f0b0047;
-        public static final int toolbar=0x7f0b0072;
+        public static final int toolbar=0x7f0b0071;
         public static final int top=0x7f0b0025;
         public static final int topPanel=0x7f0b0046;
         public static final int txtv_calculate=0x7f0b006e;

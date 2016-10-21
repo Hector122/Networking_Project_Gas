@@ -88,6 +88,8 @@ public class GasPriceFragment extends Fragment implements OnRefreshListener {
         // Initializer swipe to refresh.
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.green, R.color.yellow, R.color.red, R.color.blue);
+        mSwipeRefreshLayout.setOnRefreshListener(this);
+
 
         // Initializer progress bar.
         mSpinner = (ProgressBar) view.findViewById(R.id.progress_bar);
@@ -197,7 +199,6 @@ public class GasPriceFragment extends Fragment implements OnRefreshListener {
             protected Response<String> parseNetworkResponse(NetworkResponse response) {
                 Log.i(TAG_INFO, String.valueOf(response.statusCode));
 
-
                 return super.parseNetworkResponse(response);
             }
         };
@@ -210,5 +211,4 @@ public class GasPriceFragment extends Fragment implements OnRefreshListener {
         // Add request to the request queue
         volleyHttpClient.addRequestQueue(stringRequest);
     }
-
 }

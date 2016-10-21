@@ -20,7 +20,7 @@
             android:label="@string/app_name"
             android:theme="@style/CustomTheme">
             <activity
-                android:name="com.example.personalproject.activitys.FuelPriceActivity"
+                android:name="com.example.personalproject.activity.FuelPriceActivity"
                 android:label="@string/app_name">
                 <intent-filter>
                     <action android:name="android.intent.action.MAIN" />
@@ -29,8 +29,8 @@
                 </intent-filter>
             </activity>
             <activity
-                android:name="com.example.personalproject.activitys.DashboardContainerActivity"
-                android:parentActivityName="com.example.personalproject.activitys.DashboardContainerActivity"></activity>
+                android:name="com.example.personalproject.activity.DashboardContainerActivity"
+                android:parentActivityName="com.example.personalproject.activity.DashboardContainerActivity"></activity>
 
         </application>
 
