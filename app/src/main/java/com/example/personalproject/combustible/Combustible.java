@@ -1,5 +1,8 @@
 package com.example.personalproject.combustible;
 
+/***
+ * Create by Hector Castillo on
+ */
 public class Combustible {
 
     private double price, lastPrice;

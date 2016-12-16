@@ -14,26 +14,33 @@ import com.example.personalproject.utilitys.Utilitys;
 
 import java.util.ArrayList;
 
-public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArrayAdapter.CombustibleViewHolder> {
+public class CustomFuelArrayAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     // Activity context
     private final Context mContext;
     // List of items that are shown in the assistance list view.
-    private final ArrayList<Combustible> mAdapterList;
+    private final ArrayList<CustomFuelAdapterItem> mAdapterList;
 
+    /***
+     *
+     * @param context
+     * @param mAdapterList
+     */
     public CustomFuelArrayAdapter(Context context,
-                                  ArrayList<Combustible> mAdapterList) {
+                                  ArrayList<CustomFuelAdapterItem> mAdapterList) {
         this.mContext = context;
         this.mAdapterList = mAdapterList;
     }
 
     @Override
     public void onBindViewHolder(CombustibleViewHolder holder, int position) {
-        Combustible combustible = mAdapterList.get(position);
 
-        holder.description.setText(combustible.getDescription());
-        holder.price.setText(Utilitys.setNumberFormatToShow(combustible.getPrice()));
-        holder.differencePrice.setText(Utilitys.setNumberFormatToShow(getDifferencePrice(combustible)));
-        holder.image.setImageResource(getCorrespondingImage(combustible));
+//
+//        Combustible combustible = mAdapterList.get(position);
+//
+//        holder.description.setText(combustible.getDescription());
+//        holder.price.setText(Utilitys.setNumberFormatToShow(combustible.getPrice()));
+//        holder.differencePrice.setText(Utilitys.setNumberFormatToShow(getDifferencePrice(combustible)));
+//        holder.image.setImageResource(getCorrespondingImage(combustible));
     }
 
     @Override
@@ -100,6 +107,18 @@ public class CustomFuelArrayAdapter extends RecyclerView.Adapter<CustomFuelArray
             price = (TextView) view.findViewById(R.id.curren_price);
             description = (TextView) view.findViewById(R.id.description_title);
             differencePrice = (TextView) view.findViewById(R.id.difference_price_value);
+        }
+    }
+
+    /***
+     *
+     */
+    public static class HeaderViewHolder extends  RecyclerView.ViewHolder{
+        TextView title;
+
+        HeaderViewHolder(View view){
+            super(view);
+            title = (TextView) view.findViewById(R.id.text_header);
         }
     }
 

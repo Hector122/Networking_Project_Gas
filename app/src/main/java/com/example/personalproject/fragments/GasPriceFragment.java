@@ -20,6 +20,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.personalproject.R;
+import com.example.personalproject.adapters.CustomFuelAdapterItem;
+import com.example.personalproject.adapters.CustomFuelAdapterItem.AdapterItemType;
 import com.example.personalproject.adapters.CustomFuelArrayAdapter;
 import com.example.personalproject.combustible.Combustible;
 import com.example.personalproject.combustible.RssFeedMic;
@@ -27,9 +29,6 @@ import com.example.personalproject.networking.ParserXmlMic;
 import com.example.personalproject.networking.VolleyHttpClient;
 import com.example.personalproject.utilitys.Utilitys;
 
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -45,9 +44,6 @@ public class GasPriceFragment extends Fragment implements OnRefreshListener {
 
     // Custom Adapter
     private CustomFuelArrayAdapter mAdapter;
-
-    // List with all parse.
-    private ArrayList<Combustible> CustomListViewValues;
 
     // Swipe to Refreshing Layout
     private SwipeRefreshLayout mSwipeRefreshLayout;
@@ -133,12 +129,22 @@ public class GasPriceFragment extends Fragment implements OnRefreshListener {
      * @param mData
      */
     private void setListViewCustomAdapter(final RssFeedMic mData) {
-        CustomListViewValues = mData.getCombustibles();
+        ArrayList<CustomFuelAdapterItem> customFuelAdapterItems = new ArrayList<>();
 
-        getTitleHeaderDate(mData.getTitle());
+        String title = getTitleHeaderDate(mData.getTitle());
+
+        ArrayList<Combustible> combustibles = mData.getCombustibles();
+
+        customFuelAdapterItems.add(new CustomFuelAdapterItem(
+                AdapterItemType.COMBUSTIBLE_INFO.HEADER_VIEW, title ));
+
+
+        for(Combustible combustible: combustibles){
+            customFuelAdapterItems.add(new CustomFuelAdapterItem(AdapterItemType.COMBUSTIBLE_INFO, combustible));
+        }
 
         // Create Custom Adapter
-        mAdapter = new CustomFuelArrayAdapter(mContext, CustomListViewValues);
+        mAdapter = new CustomFuelArrayAdapter(mContext, customFuelAdapterItems);
         mRecycleView.setAdapter(mAdapter);
 
         //TODO: put the animation creating the list.
@@ -162,11 +168,7 @@ public class GasPriceFragment extends Fragment implements OnRefreshListener {
             RssFeedMic mRssFeedData = new ParserXmlMic().readEntry(response);
             setListViewCustomAdapter(mRssFeedData);
 
-        } catch (XmlPullParserException e) {
-            Log.e(TAG_ERROR, e.getMessage());
-            e.printStackTrace();
-
-        } catch (IOException e) {
+        } catch (Exception e) {
             Log.e(TAG_ERROR, e.getMessage());
             e.printStackTrace();
         }
